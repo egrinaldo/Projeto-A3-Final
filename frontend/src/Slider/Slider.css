@@ -1,0 +1,79 @@
+.Slider{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.slide{
+  display: flex;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 80%;
+  height: 540px;
+  border-radius: 10px;
+}
+
+/* ======================================================================================================== */
+
+
+/* CONFIGURAÇÃO DOS CARDS */
+.palette {
+  display: flex;
+  height: 540px;
+  width: 98.5%;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 10px;
+ /* recomiendo quitar esto/quit this */
+}
+
+.color {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.color span {
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+
+.color:nth-child(1) {
+  background: #264653;
+}
+
+.color:nth-child(2) {
+  background: #2a9d8f;
+}
+
+.color:nth-child(3) {
+  background: #e9c46a;
+}
+
+.color:nth-child(4) {
+  background: #f4a261;
+}
+
+.color:nth-child(5) {
+  background: #e76f51;
+}
+
+.color:hover {
+  flex: 2;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.color:hover span {
+  opacity: 1;
+}
+

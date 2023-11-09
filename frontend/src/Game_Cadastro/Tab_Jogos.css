@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2? family= Libre+Baskerville & family= Open+Sans & family= Poppins:wght@500 & display=swap");
+@import url("https://fonts.googleapis.com/css2? family= Teko:wght@300 & display=swap");
+
+/* BASE DO FORMULARIO */
+.Form_Tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #404040;
+    border-style: groove;
+    background: #121212;
+    width: 100vw;
+    height: 100rh;
+    
+    
+/* CARD DO NOME 'MEUS FAVORITOS' */
+}
+
+
+
+table{
+    width: 100%;
+    padding: 0.5%;
+}
+.Form_Name th{
+    font-family: "Teko", sans-serif, "Libre Baskerville", serif;
+    font-size: 20px;
+    border: groove;
+    border-color: #404040;
+    color: #cacaca;
+}
+
+#img_game{
+    width: 10%;
+}
+
+.Form_Dados img{
+    margin-top: 2%;
+    width: 50%;
+    height: 30%;
+}
+
+.Form_Dados td{
+    text-align: center;
+    border: groove;
+    border-color: #404040;
+    color: #cacaca;
+}
+
+#edit{
+    margin-top: 10%;
+    border: none;
+    font-size: 160%;
+    color: aliceblue;
+    background: transparent;
+}
+#edit:hover{
+    color: #0a7b1f;
+   
+}
+
+
+#excluir{
+    margin-top: 10%;
+    border: none;
+    font-size: 160%;
+    color: aliceblue;
+    background: transparent;
+}
+#excluir:hover{
+    color: #9c0f37;
+}
+

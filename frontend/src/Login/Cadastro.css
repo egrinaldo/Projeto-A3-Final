@@ -1,0 +1,108 @@
+.Login_Box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #202020;
+    margin-top: 2rem;
+    width: 450px;
+    height: 600px;
+    border-radius: 5px;
+}
+
+.Login_Box img {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin-top: -90px;
+
+}
+
+.Login_Box form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: -50px;
+    padding: 32px 24px 24px;
+    gap: 16px;
+    text-align: center;
+}
+
+.Text_Log {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.Text_Log span {
+    margin-top: 10px;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    color: #ffffff;
+}
+
+.Text_Log p {
+    font-size: 1.1rem;
+    color: #cccccc;
+}
+
+.Inputs {
+    overflow: hidden;
+    background-color: #fff;
+    width: 100%;
+    margin: 0rem 0.5rem;
+    border-radius: 8px;
+    border-bottom: none;
+    outline: 0;
+
+}
+
+.Inputs input {
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+    font-weight: 200;
+}
+
+.Botao_Log {
+    background-color: #6d6c6c;
+    color: white;
+    width: 100%;
+    height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 0;
+    overflow: hidden;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+
+}
+
+.Botao_Log:hover {
+    background-color: #005ce6;
+}
+
+.Login_Dir{
+    margin-top: -15px;
+}
+
+.Login_Dir a {
+    font-weight: bolder;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.Login_Dir p{
+    color: #ffffff;
+}
+
+.Login_Dir a:hover {
+    color: #005ce6;
+}

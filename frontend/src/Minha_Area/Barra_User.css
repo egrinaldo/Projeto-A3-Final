@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2? family= Libre+Baskerville & family= Open+Sans & family= Poppins:wght@500 & display=swap");
+@import url("https://fonts.googleapis.com/css2? family= Teko:wght@300 & display=swap");
+
+/* TAG DE ESTILO DA BARRA DO USUARIO JA LOGADO */
+.barUser {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-color: #404040;
+  border-style: groove;
+  background: #121212;
+  width: 100vw;
+  height: 5rem;
+  padding: 9px;
+}
+
+/* ========================================================================================= */
+
+/* TAG REFERENTE A FOTO DO USUARIO ONDE EXISTE A BORDA DE EFEITO EXTERNA E A FOTO INTERNA */
+
+.fotoUser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to left,
+    #fff9f9,
+    #333333,
+    #404040,
+    #121212,
+    #121212
+  );
+  width: 5vw;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.fotoUserInt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  width: 4vw;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.fotoUserInt button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  width: 4vw;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+#fotoPerfil {
+  background-size: cover;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+/* =========================================================================================== */
+
+/* TAG PARA ESTILO DO NOME DO USUARIO */
+
+.barName {
+  background: transparent;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 7vw;
+  height: 4rem;
+  margin: 1%;
+}
+
+#nameId {
+  color: #aeaeae;
+  font-size: 14px;
+  font-family: "Teko", sans-serif, "Libre Baskerville", serif;
+}
+
+/* SÓ A NIVEL DE EXPERIENCIA */
+
+#nameId {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  display: inline-block;
+  padding: 1.5em 0em;
+  position: absolute;
+
+  width: 40em;
+  margin: 0 0 0 -20em;
+
+  letter-spacing: 0;
+  padding: 0.25em 0 0.325em;
+  margin: 0 auto;
+  text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+
+  /* Clip Background Image */
+
+  background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Animate Background Image */
+
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: aitf 80s linear infinite;
+
+  /* Activate hardware acceleration for smoother animations */
+
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+}
+
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ================================================================================================== */
+
+/* TAG REFERENTE AO BLOCO DE HORAS JOGADAS */
+
+.horasjg {
+  margin-left: 83%;
+  perspective: 500px;
+}
+
+.horasjg_card {
+  width: 60px;
+  height: 40px;
+  background: #16161d;
+  border: 2px solid #555555;
+  box-shadow: #333333;
+  border-radius: 4px;
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.5s;
+}
+
+.horasjg_card:hover {
+  transform: translateZ(10px) rotateX(20deg) rotateY(-20deg);
+}
+
+.horasjg_title {
+  color: #fff;
+  position: absolute;
+  top: 80%;
+  right: 29px;
+  flex-wrap: nowrap;
+  transform: translateY(-50%);
+  transition: transform 0.5s;
+  font: 700 1.5rem monospace;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.horasjg_title p {
+  font-family: "Teko", sans-serif, "Libre Baskerville", serif;
+  margin: -15px;
+  transform: translateY(-50%);
+  transition: transform 0.5s;
+  color: #fff;
+  font-size: 12px;
+  top: 50%;
+  right: 20px;
+}
+
+#horasjg_horas {
+  font-size: 20px;
+  text-align: center;
+}
+
+.horasjg_card:hover .horasjg_title {
+  transform: translateZ(30px);
+}
+
+/* ================================================================================================== */
