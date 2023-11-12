@@ -21,12 +21,6 @@ export default function Login_User() {
                         <div className='Inputs2'>
                             <input type='password' placeholder='Informe Sua Senha ' required />
                         </div>
-
-                            <div className='CheckBox'>
-                                <input type='checkbox' />
-                                <p>Lembrar Senha <a href="">Esqueceu a Senha</a></p>
-                            </div>
-
                   
                         <button className='Botao_Log2'><a href="./MinhaArea">Logar</a></button>
                         <div className='Login_Dir2'>

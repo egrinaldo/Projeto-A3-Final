@@ -32,3 +32,43 @@
 
 /*=================================================================================== */
 
+/* RESPONSIVIDADE  */
+
+@media (min-width: 1600px) and (max-width: 1700px){
+    .menu_nave{
+        margin-left: -2.3%;
+    }
+    
+    .menu_nave ul{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        list-style: none;
+    }
+    
+    .menu_nave li a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        font-size: 11px;
+        font-style: normal;
+        line-height: 18px;
+        color: #cccccc;
+        text-decoration: none;
+        font-family: 'Open Sans', sans-serif,arial;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 450px){
+    .menu_nave{
+        margin-left: -10.3%;
+    }
+    
+}
+
+@media (min-width: 760px) and (max-width: 820px){
+    .menu_nave{
+        margin-left: -5.3%;
+    }
+}

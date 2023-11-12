@@ -30,3 +30,38 @@
     font-family: 'Open Sans', sans-serif,arial;
     text-decoration: none;
 }
+
+/* RESPONSIVIDADE */
+
+@media (min-width: 1600px){
+    .UserA{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 40px;
+        margin: 85%;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 450px){
+    .UserA{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 40px;
+        margin: 22%;
+    }
+}
+
+@media (min-width: 760px) and (max-width: 820px){
+    .UserA{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 40px;
+        margin: 62%;
+    }
+}

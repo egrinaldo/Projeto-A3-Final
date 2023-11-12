@@ -11,59 +11,12 @@
   border-style: groove;
   background: #121212;
   width: 100vw;
-  height: 5rem;
+  height: 2rem;
   padding: 9px;
 }
 
 /* ========================================================================================= */
 
-/* TAG REFERENTE A FOTO DO USUARIO ONDE EXISTE A BORDA DE EFEITO EXTERNA E A FOTO INTERNA */
-
-.fotoUser {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(
-    to left,
-    #fff9f9,
-    #333333,
-    #404040,
-    #121212,
-    #121212
-  );
-  width: 5vw;
-  height: 4rem;
-  border-radius: 50%;
-}
-
-.fotoUserInt {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: black;
-  width: 4vw;
-  height: 3rem;
-  border-radius: 50%;
-}
-
-.fotoUserInt button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-  width: 4vw;
-  height: 3rem;
-  border-radius: 50%;
-}
-
-#fotoPerfil {
-  background-size: cover;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-}
-
-/* =========================================================================================== */
 
 /* TAG PARA ESTILO DO NOME DO USUARIO */
 
@@ -75,6 +28,7 @@
   width: 7vw;
   height: 4rem;
   margin: 1%;
+  margin-top: 1.3%;
 }
 
 #nameId {
@@ -130,61 +84,3 @@
 
 /* ================================================================================================== */
 
-/* TAG REFERENTE AO BLOCO DE HORAS JOGADAS */
-
-.horasjg {
-  margin-left: 83%;
-  perspective: 500px;
-}
-
-.horasjg_card {
-  width: 60px;
-  height: 40px;
-  background: #16161d;
-  border: 2px solid #555555;
-  box-shadow: #333333;
-  border-radius: 4px;
-  position: relative;
-  transform-style: preserve-3d;
-  will-change: transform;
-  transition: transform 0.5s;
-}
-
-.horasjg_card:hover {
-  transform: translateZ(10px) rotateX(20deg) rotateY(-20deg);
-}
-
-.horasjg_title {
-  color: #fff;
-  position: absolute;
-  top: 80%;
-  right: 29px;
-  flex-wrap: nowrap;
-  transform: translateY(-50%);
-  transition: transform 0.5s;
-  font: 700 1.5rem monospace;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-
-.horasjg_title p {
-  font-family: "Teko", sans-serif, "Libre Baskerville", serif;
-  margin: -15px;
-  transform: translateY(-50%);
-  transition: transform 0.5s;
-  color: #fff;
-  font-size: 12px;
-  top: 50%;
-  right: 20px;
-}
-
-#horasjg_horas {
-  font-size: 20px;
-  text-align: center;
-}
-
-.horasjg_card:hover .horasjg_title {
-  transform: translateZ(30px);
-}
-
-/* ================================================================================================== */

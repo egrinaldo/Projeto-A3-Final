@@ -63,11 +63,6 @@ export default function Cad_User() {
             <p>Já é Inscrito teste? <a href="/Login">Entrar</a></p>
           </div>
 
-          <div>
-            \sdddd
-            
-            teste aaa aa   aaaaaa  aaa
-          </div>
         </form>
       </div>
 
