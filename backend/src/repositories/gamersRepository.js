@@ -5,7 +5,12 @@ const prisma = new PrismaClient();
 // Obtém todos os jogos
 async function getAllGames() {
   try{
-    const result = await prisma.$queryRaw`SELECT * FROM Game`
+    const result = await prisma.$queryRaw`SELECT
+     id,
+     name,
+     rated,
+     status
+     FROM Game`
     return result;
   }
   catch(error){

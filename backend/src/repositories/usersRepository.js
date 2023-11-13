@@ -11,27 +11,13 @@ async function getAllUsers() {
 
 // Cria um novo usuário
 async function createUser(userData) {
+  console.log("bateu")
    return await prisma.user.create({
     data: {
       name: userData.name,
       email: userData.email,
       password: userData.password,
-      username: userData.username,
-      avatarUrl: userData.avatarUrl,
-      Category: {
-        create: categories.map((category) => {
-          return {
-            name: category.name,
-          };
-        }),
-      },
-      Platform: {
-        create: platforms.map(platforms => {
-         return {
-            name: platforms.name,
-         };
-        }),
-      },
+      username: userData.username
     },
   },
 ); 

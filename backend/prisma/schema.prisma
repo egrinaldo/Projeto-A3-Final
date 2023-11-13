@@ -12,31 +12,29 @@ datasource db {
 }
 
 model User {
-  id        String     @id @default(uuid())
-  email     String     @unique
-  name      String
-  password  String
-  username  String     @unique
-  avatarUrl String?
-  Game      Game[]
-  Category  Category[]
-  Platform  Platform[]
+  id       Int        @id @default(autoincrement())
+  email    String     @unique
+  name     String
+  password String
+  username String     @unique
+  Game     Game[]
+  Platform Platform[]
 }
 
 model Platform {
-  id     String @id @default(uuid())
+  id     Int    @id @default(autoincrement())
   name   String
-  userId String
+  userId Int
   Game   Game[]
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Game {
-  id         String @id @default(uuid())
-  userId     String
-  platformId String
-  categoryId String
+  id         Int    @id @default(autoincrement())
+  userId     Int
+  platformId Int
+  categoryId Int
   name       String
   rated      Int
   status     String @default("Jogando")
@@ -47,10 +45,8 @@ model Game {
 }
 
 model Category {
-  id     String @id @default(uuid())
+  id     Int    @id @default(autoincrement())
   name   String
   userId String
   Game   Game[]
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
