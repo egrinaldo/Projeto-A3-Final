@@ -1,6 +1,4 @@
 const { PrismaClient } = require('@prisma/client');
-const categories = require('../Mocks/mockCategories');
-const platforms = require('../Mocks/mocksPlatforms');
 const prisma = new PrismaClient();
 const bcrypt = require('bcrypt');
 

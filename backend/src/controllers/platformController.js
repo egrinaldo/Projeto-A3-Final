@@ -23,7 +23,19 @@ async function createPlatform(req, res){
   }
 }
 
+async function updatePlatform(req, res) {
+  try{
+    const platformUpdated = await platformService.updatePlatform(req.body);
+    res.json(platformUpdated);
+  }
+  catch(error){
+    console.error(error);
+    res.status(500).json({ error: 'Erro ao atualizar plataformas.' });
+  }
+}
+
 module.exports = {
     getAllPlatforms,
     createPlatform,
+    updatePlatform,
 };

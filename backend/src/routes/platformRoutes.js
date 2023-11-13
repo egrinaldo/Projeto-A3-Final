@@ -5,5 +5,6 @@ const platformController = require('../controllers/platformController');
 // Rotas para cateogrias
 platformRouter.get('/', platformController.getAllPlatforms);
 platformRouter.post('/', platformController.createPlatform);
+platformRouter.put('/', platformController.updatePlatform);
 
 module.exports = platformRouter;

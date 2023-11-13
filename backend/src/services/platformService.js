@@ -10,7 +10,12 @@ async function createPlatform(platformData){
   return await platformRepository.createPlatform(platformData);
 }
 
+async function updatePlatform(platformUpdateData){
+  return await platformRepository.updatePlatform(platformUpdateData);
+}
+
 module.exports = {
     getAllPlatforms,
     createPlatform,
+    updatePlatform,
 };
