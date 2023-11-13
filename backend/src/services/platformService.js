@@ -14,8 +14,13 @@ async function updatePlatform(platformUpdateData){
   return await platformRepository.updatePlatform(platformUpdateData);
 }
 
+async function deletePlatform(platformId){
+  return await platformRepository.deletePlatform(platformId);
+}
+
 module.exports = {
     getAllPlatforms,
     createPlatform,
     updatePlatform,
+    deletePlatform,
 };

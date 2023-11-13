@@ -34,8 +34,20 @@ async function updatePlatform(req, res) {
   }
 }
 
+async function deletePlatform(req, res) {
+  try{
+    const platformDeleted = await platformService.deletePlatform(req.params.id);
+    res.json(platformDeleted);
+  }
+  catch(error){
+    console.error(error);
+    res.status(500).json({ error: 'Erro ao deletar plataformas.' });
+  }
+}
+
 module.exports = {
     getAllPlatforms,
     createPlatform,
     updatePlatform,
+    deletePlatform
 };

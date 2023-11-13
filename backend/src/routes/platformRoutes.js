@@ -6,5 +6,6 @@ const platformController = require('../controllers/platformController');
 platformRouter.get('/', platformController.getAllPlatforms);
 platformRouter.post('/', platformController.createPlatform);
 platformRouter.put('/', platformController.updatePlatform);
+platformRouter.delete('/:id', platformController.deletePlatform);
 
 module.exports = platformRouter;

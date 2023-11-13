@@ -30,8 +30,13 @@ async function updatePlatform(platformUpdateData){
     }
 }
 
+async function deletePlatform(platformId){
+    return await prisma.$executeRaw`DELETE FROM Platform WHERE id = ${platformId};`
+}
+
 module.exports = {
     getAllPlatformsByUserId,
     createPlatform,
     updatePlatform,
+    deletePlatform,
 };
