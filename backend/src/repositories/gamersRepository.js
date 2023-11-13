@@ -34,17 +34,17 @@ async function createGame(gameData) {
     );`
 
    if (gameCreated){
-    return getUserByEmail(userData.email)
+    return getGameByName(gameData.name)
    }
+}
+
+async function getGameByName(name){
+  return await prisma.$queryRaw`SELECT * FROM Game WHERE name = ${name}`	
 }
 
 // Obtém um jogo pelo ID
 async function getGameById(gameId) {
-  return await prisma.game.findUnique({
-    where: {
-      id: gameId,
-    },
-  });
+  return await prisma.$queryRaw`SELECT * FROM Game WHERE id = ${gameId}`
 }
 
 // Atualiza um jogo pelo ID
