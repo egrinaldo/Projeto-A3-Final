@@ -11,6 +11,19 @@ async function getAllCategories(req, res) {
   }
 }
 
+  async function createCategory(req, res) {
+    try {
+      const categoryData = req.body;
+      const category = await categorieService.createCategory(categoryData);
+      res.json(category);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao criar categoria.' });
+    }
+  }
+
+
 module.exports = {
     getAllCategories,
+    createCategory
 };

@@ -45,8 +45,7 @@ model Game {
 }
 
 model Category {
-  id     Int    @id @default(autoincrement())
-  name   String
-  userId String
-  Game   Game[]
+  id   Int    @id @default(autoincrement())
+  name String
+  Game Game[]
 }
