@@ -24,8 +24,8 @@ async function deletePlatform(platformId){
 
 module.exports = {
     getAllPlatforms,
+    getPlatformById,
     createPlatform,
     updatePlatform,
     deletePlatform,
-    getPlatformById,
 };

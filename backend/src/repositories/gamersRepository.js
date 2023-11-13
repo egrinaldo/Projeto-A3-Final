@@ -23,9 +23,19 @@ async function getAllGames() {
 
 // Cria um novo jogo
 async function createGame(gameData) {
-  return await prisma.game.create({
-    data: gameData,
-  });
+  const gameCreated =  await prisma.$executeRaw`INSERT INTO Game (userId, platformId, categoryId, name, rated, status)
+   VALUES (
+    ${gameData.userId},
+    ${gameData.platformId},
+    ${gameData.categoryId},
+    ${gameData.name},
+    ${gameData.rated},
+    ${gameData.status}
+    );`
+
+   if (gameCreated){
+    return getUserByEmail(userData.email)
+   }
 }
 
 // Obtém um jogo pelo ID
