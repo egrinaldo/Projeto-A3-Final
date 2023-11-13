@@ -45,9 +45,21 @@ async function deletePlatform(req, res) {
   }
 }
 
+async function getPlatformById(req, res) {
+  try{
+    const platform = await platformService.getPlatformById(req.params.id);
+    res.json(platform);
+  }
+  catch(error){
+    console.error(error);
+    res.status(500).json({ error: 'Erro ao buscar plataforma.' });
+  }
+}
+
 module.exports = {
     getAllPlatforms,
     createPlatform,
     updatePlatform,
-    deletePlatform
+    deletePlatform,
+    getPlatformById,
 };

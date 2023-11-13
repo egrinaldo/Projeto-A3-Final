@@ -5,6 +5,10 @@ async function getAllPlatforms() {
   return await platformRepository.getAllPlatforms();
 }
 
+async function getPlatformById(platformId){
+  return await platformRepository.getPlatformById(platformId);
+}
+
 async function createPlatform(platformData){
   console.log('service')
   return await platformRepository.createPlatform(platformData);
@@ -23,4 +27,5 @@ module.exports = {
     createPlatform,
     updatePlatform,
     deletePlatform,
+    getPlatformById,
 };

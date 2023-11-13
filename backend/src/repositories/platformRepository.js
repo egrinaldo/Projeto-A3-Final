@@ -10,6 +10,10 @@ async function getPlatformByName(name){
     return await prisma.$queryRaw`SELECT * FROM Platform WHERE name = ${name}`	
 }
 
+async function getPlatformById(platformId){
+    return await prisma.$queryRaw`SELECT * FROM Platform WHERE id = ${platformId}`
+}
+
 async function createPlatform(platformData){
    const platformCreated =  await prisma.$executeRaw`INSERT INTO Platform (name, userId)
    VALUES (${platformData.name}, ${platformData.userId});`
@@ -39,4 +43,5 @@ module.exports = {
     createPlatform,
     updatePlatform,
     deletePlatform,
+    getPlatformById
 };
