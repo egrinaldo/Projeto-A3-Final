@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2? family= Libre+Baskerville & family= Open+Sans & family= Poppins:wght@500 & display=swap");
+@import url("https://fonts.googleapis.com/css2? family= Teko:wght@300 & display=swap");
+
+/* BASE DO FORMULARIO */
+.cad_Form{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-color: #404040;
+    border-style: groove;
+    background: #121212;
+    width: 100vw;
+    height: 3rem;
+/* CARD DO NOME 'MEUS FAVORITOS' */
+}
+.card_cadNome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
+
+}
+
+.card_cadNome p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    color: #cacaca;
+    font-size: 100%;
+    margin: 0px;
+    font-family: "Teko", sans-serif, "Libre Baskerville", serif;
+}
+
+/* ================================================================================================ */
+
+
+/* DESIGN DO CARD IMPUT DO FORMULARIO */
+
+.Form_Jg{
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+}
+
+.Pla_Game {
+    display: block;
+    width: 150px;
+    height: 35px;
+    background-color: #292929;
+    border-radius: 10px;
+    border: 2px solid #292929;
+    padding: 0px 12px;
+    outline: none;
+    caret-color: rgb(152, 88, 255);
+    color: rgb(212, 212, 212);
+    font-size: 12px;
+    transition-duration: .2s;
+    margin: 2%;
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+  
+
+  /* ============================================================================================= */
+
+  /* DESIGN DO CARD IMPUT FILE DO FORMULARIO */
+
+  .text_Arquiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text_Arquiv span{
+    text-align: center;
+    margin-top: 7%;
+  }
+
+  #Jg_Img{
+    display: none;
+  }
+
+
+
+  /* ========================================================================================= */
+
+
+
+/* AJUSTES NO ICONES LIMPAR E SALVAR NO CADASTRO DE JOGOS */
+
+.buttonsCadJg{
+  display: flex;
+  flex-direction: row;
+  margin-left: 30%;
+  background: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 1.5%;
+
+}
+
+
+#limpar{
+  font-size: 20px;
+  background: none;
+  color: azure;
+  padding: 0;
+  margin: 0;
+  border: none;
+  margin-left: 10px;
+}
+#limpar:hover{
+  color: red;
+}
+
+#salvar{
+  font-size: 20px;
+  background: none;
+  color: azure;
+  padding: 0;
+  margin: 0;
+  border: none;
+  margin-left: 10px;
+}
+
+#salvar:hover{
+  color: greenyellow;
+}
+
+/* RESPONSIVIDADE */
