@@ -1,33 +1,14 @@
-.Slider{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+.carousel {
+  padding-top: 90px;
 }
-
-.slide{
-  display: flex;
-  object-fit: cover;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  width: 80%;
-  height: 540px;
-  border-radius: 10px;
-}
-
-/* ======================================================================================================== */
-
-
-/* CONFIGURAÇÃO DOS CARDS */
 .palette {
   display: flex;
   height: 540px;
-  width: 98.5%;
+  width: 98%;
   border-radius: 15px;
   overflow: hidden;
-  margin: 10px;
- /* recomiendo quitar esto/quit this */
+  margin: 0;
+  margin-left: 1%;
 }
 
 .color {
@@ -39,7 +20,7 @@
   color: white;
   font-weight: 600;
   letter-spacing: 1px;
-  transition: all 0.3s ease-out;
+  transition: all 0.5s ease-out;
   cursor: pointer;
 }
 
@@ -49,23 +30,33 @@
 }
 
 .color:nth-child(1) {
-  background: #264653;
+  background-image:url(src/assets/img_slide/starfield.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .color:nth-child(2) {
-  background: #2a9d8f;
+  background-image:url(src/assets/img_slide/spiderman.jpg);
+  background-position: left 70%;
+  background-size: cover;
 }
 
 .color:nth-child(3) {
-  background: #e9c46a;
+  background-image:url(src/assets/img_slide/mw2.jpg);
+  background-position: top 30%;
+  background-size: cover;
 }
 
 .color:nth-child(4) {
-  background: #f4a261;
+  background-image:url(src/assets/img_slide/fifa22.jpg);
+  background-position: top 15%;
+  background-size: cover;
 }
 
 .color:nth-child(5) {
-  background: #e76f51;
+  background-image:url(src/assets/img_slide/Forza-Horizon-6.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .color:hover {
@@ -77,3 +68,80 @@
   opacity: 1;
 }
 
+/* RESPONSIVIDADE */
+
+@media (min-width: 360px) and (max-width: 450px){
+  /*TELA DESCUBRA CAROUSEL*/
+
+  .carousel {
+    padding-top: 70px;
+    margin-left: 6%;
+  }
+  .palette {
+    display: flex;
+    height: 300px;
+    width: 98%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0;
+    margin-left: 1%;
+  }
+  
+  .color {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+  }
+  
+  .color span {
+    opacity: 0;
+    transition: opacity 0.1s linear;
+  }
+  
+  .color:nth-child(1) {
+    background-image:url(src/assets/img_slide/starfield.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .color:nth-child(2) {
+    background-image:url(src/assets/img_slide/spiderman.jpg);
+    background-position: left 70%;
+    background-size: cover;
+  }
+  
+  .color:nth-child(3) {
+    background-image:url(src/assets/img_slide/mw2.jpg);
+    background-position: top 30%;
+    background-size: cover;
+  }
+  
+  .color:nth-child(4) {
+    background-image:url(src/assets/img_slide/fifa22.jpg);
+    background-position: top 15%;
+    background-size: cover;
+  }
+  
+  .color:nth-child(5) {
+    background-image:url(src/assets/img_slide/Forza-Horizon-6.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .color:hover {
+    flex: 2;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  
+  .color:hover span {
+    opacity: 1;
+  }
+
+}
