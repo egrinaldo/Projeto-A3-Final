@@ -107,9 +107,16 @@
     color: #005ce6;
 }
 
+#error-message{
+    color: red;
+    margin:0;
+    font-size: 0.8rem;
+}
+
 /* RESPONSIVIDADE */
 
-@media (min-width: 360px) and (max-width: 450px){
+@media (min-width: 360px) and 
+(max-width: 450px){
 
     .Login_Box {
         display: flex;

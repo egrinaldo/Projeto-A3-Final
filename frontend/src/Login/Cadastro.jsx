@@ -1,29 +1,15 @@
 
-import { useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import './Cadastro.css';
 
 export default function Cad_User() {
 
-  const  [data, setdata] = useState ({
-    nome:'',
-    nome_usuario:'',
-    email:'',
-    senha:'',
-    conf_senha:''
+  const { handleSubmit, control } = useForm();
 
-  });
-
-  const valorInput = e => setdata({...data, [e.target.name]: e.target.value});
-
-  const sendCad = (e) => {
-    e.preventDefault();
-    console.log(`Nome: ${data.nome}`);
-    console.log(`nome_usuario: ${data.nome_usuario}`);
-    console.log(`email: ${data.email}`);
-    console.log(`email: ${data.email}`);
-    console.log(`conf_senha: ${data.conf_senha}`);
-  }
+  const onSubmit = (data) => {
+    console.log(data); // Os dados do formulário serão impressos aqui
+  };
 
   return (
     
@@ -32,17 +18,41 @@ export default function Cad_User() {
         <img src="src/assets/img_barnav/image.png" alt="" />
       </div>
       <div>
-        <form onSubmit={sendCad}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className='Text_Log'>
             <span>Cadastro</span>
             <p>Crie uma conta gratuita com seu e-mail.</p>
           </div>
 
-          <div className='Inputs'>
-            <input type='text' name='nome' id='nome'  onChange={valorInput} placeholder='Informe Seu Nome Completo' />
-          </div>    
+          <Controller
+            name="name"
+            control={control}
+            defaultValue=""
+            rules={{ required: 'Nome é obrigatório'}}
+            render={({ field, fieldState }) => (
+              <div className='Inputs'>
+                {/* <label>Nome</label> */}
+                <input {...field}  placeholder='Digite seu nome' id='nome_user' />
+                {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
+              </div>
+            )} 
+          />
 
-          <div className='Inputs'>
+          <Controller
+            name="email"
+            control={control}
+            defaultValue=""
+            rules={{ required: 'Email é obrigatório', pattern: /^\S+@\S+$/i}}
+            render={({ field, fieldState }) => (
+              <div className='Inputs'>
+                {/* <label>Nome</label> */}
+                <input {...field}  placeholder='Digite seu email' id='email' />
+                {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
+              </div>
+            )} 
+          />
+          
+          {/* <div className='Inputs'>
             <input type='text' name='nome_usuario' id='nome_user' onChange={valorInput} placeholder='Digite Nome de Usuário' />
           </div>
 
@@ -56,7 +66,7 @@ export default function Cad_User() {
 
           <div className='Inputs'>
             <input type='password' name='conf_senha' id='conf_senha' onChange={valorInput} placeholder='Confirme Sua Senha' />
-          </div>
+          </div> */}
 
           <button type='submit' className='Botao_Log'>Inscreva-se</button>
 

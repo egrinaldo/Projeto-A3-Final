@@ -32,7 +32,7 @@ export default function Login_User() {
                             <a href="/">Política e Privacidade</a>
                         </div>
                         <div className='Return'>
-                            <a href="/">Voltar para Todas as Opções de Início de Sessão </a>
+                            <Link to='/'>Voltar para a Home</Link>
                         </div>
                     </form>
                 </div>
