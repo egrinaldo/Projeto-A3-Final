@@ -51,23 +51,21 @@ export default function Cad_User() {
               </div>
             )} 
           />
+
+<Controller
+            name="password"
+            control={control}
+            defaultValue=""
+            rules={{ required: 'Senha é obrigatório', minLength: {value: 6, message: 'Senha deve ter no mínimo 6 caracteres'}}}
+            render={({ field, fieldState }) => (
+              <div className='Inputs'>
+                {/* <label>Nome</label> */}
+                <input {...field}  placeholder='Digite sua senha' id='senha' type='password' />
+                {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
+              </div>
+            )} 
+          />
           
-          {/* <div className='Inputs'>
-            <input type='text' name='nome_usuario' id='nome_user' onChange={valorInput} placeholder='Digite Nome de Usuário' />
-          </div>
-
-          <div className='Inputs'>
-            <input type='email' name='email' id='email' onChange={valorInput} placeholder='Digite Seu E-mail' />
-          </div>
-
-          <div className='Inputs'>
-            <input type='password' name='senha' id='senha' onChange={valorInput}  placeholder='Informe Sua Senha ' />
-          </div>
-
-          <div className='Inputs'>
-            <input type='password' name='conf_senha' id='conf_senha' onChange={valorInput} placeholder='Confirme Sua Senha' />
-          </div> */}
-
           <button type='submit' className='Botao_Log'>Inscreva-se</button>
 
           <div className='Login_Dir'>
