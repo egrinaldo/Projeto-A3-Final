@@ -1,14 +1,21 @@
 
+import axios from 'axios';
 import { Controller, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import './Cadastro.css';
+
 
 export default function Cad_User() {
 
   const { handleSubmit, control } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data); // Os dados do formulário serão impressos aqui
+
+    // faz a comunicação com o axios
+    const response =  await axios.post('http://localhost:3000/users', data)
+
+    console.log(response.data);
   };
 
   return (
@@ -33,6 +40,20 @@ export default function Cad_User() {
               <div className='Inputs'>
                 {/* <label>Nome</label> */}
                 <input {...field}  placeholder='Digite seu nome' id='nome_user' />
+                {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
+              </div>
+            )} 
+          />
+
+        <Controller
+            name="username"
+            control={control}
+            defaultValue=""
+            rules={{ required: 'Username é obrigatório'}}
+            render={({ field, fieldState }) => (
+              <div className='Inputs'>
+                {/* <label>Nome</label> */}
+                <input {...field}  placeholder='Digite seu usuário' id='nome_user' />
                 {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
               </div>
             )} 

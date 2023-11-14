@@ -14,6 +14,7 @@ async function getAllUsers(req, res) {
 // Cria um novo usuário
 async function createUser(req, res) {
   try {
+    console.log('veio do front')
     const user = await userService.createUser(req.body);
     res.status(201).json(user);
   } catch (error) {
