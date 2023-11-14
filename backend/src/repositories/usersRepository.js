@@ -1,40 +1,16 @@
 const { PrismaClient } = require('@prisma/client');
-const categories = require('../Mocks/mockCategories');
-const platforms = require('../Mocks/mocksPlatforms');
 const prisma = new PrismaClient();
 const bcrypt = require('bcrypt');
 
-// Obtém todos os usuários
-async function getAllUsers() {
-  return await prisma.$queryRaw`SELECT * FROM User`
-}
 
 // Cria um novo usuário
 async function createUser(userData) {
-   return await prisma.user.create({
-    data: {
-      name: userData.name,
-      email: userData.email,
-      password: userData.password,
-      username: userData.username,
-      avatarUrl: userData.avatarUrl,
-      Category: {
-        create: categories.map((category) => {
-          return {
-            name: category.name,
-          };
-        }),
-      },
-      Platform: {
-        create: platforms.map(platforms => {
-         return {
-            name: platforms.name,
-         };
-        }),
-      },
-    },
-  },
-); 
+  const userCreated =  await prisma.$executeRaw`INSERT INTO User (name, email, password, username)
+   VALUES (${userData.name}, ${userData.email}, ${userData.password}, ${userData.username});`
+
+   if (userCreated){
+    return getUserByEmail(userData.email)
+   }
 }
 
 // Obtém um usuário pelo ID
@@ -42,19 +18,8 @@ async function getUserById(userId) {
   return await prisma.$queryRaw`SELECT * FROM User WHERE id = ${userId}`
 }
 
-// Atualiza um usuário pelo ID
-async function updateUser(userId, userData) {
-  return await prisma.user.update({
-    where: {
-      id: userId,
-    },
-    data: userData,
-  });
-}
-
-// Deleta um usuário pelo ID
-async function deleteUser(userId) {
-  return result = await prisma.$executeRaw`DELETE FROM User WHERE id = ${userId};`
+async function getUserByEmail(email){
+  return await prisma.$queryRaw`SELECT * FROM User WHERE email = ${email}`	
 }
 
 async function login(email, password) {
@@ -75,10 +40,7 @@ async function login(email, password) {
 }
 
 module.exports = {
-  getAllUsers,
   createUser,
   getUserById,
-  updateUser,
-  deleteUser,
   login,
 };

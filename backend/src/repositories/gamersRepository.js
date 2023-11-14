@@ -5,7 +5,12 @@ const prisma = new PrismaClient();
 // Obtém todos os jogos
 async function getAllGames() {
   try{
-    const result = await prisma.$queryRaw`SELECT * FROM Game`
+    const result = await prisma.$queryRaw`SELECT
+     id,
+     name,
+     rated,
+     status
+     FROM Game`
     return result;
   }
   catch(error){
@@ -18,18 +23,28 @@ async function getAllGames() {
 
 // Cria um novo jogo
 async function createGame(gameData) {
-  return await prisma.game.create({
-    data: gameData,
-  });
+  const gameCreated =  await prisma.$executeRaw`INSERT INTO Game (userId, platformId, categoryId, name, rated, status)
+   VALUES (
+    ${gameData.userId},
+    ${gameData.platformId},
+    ${gameData.categoryId},
+    ${gameData.name},
+    ${gameData.rated},
+    ${gameData.status}
+    );`
+
+   if (gameCreated){
+    return getGameByName(gameData.name)
+   }
+}
+
+async function getGameByName(name){
+  return await prisma.$queryRaw`SELECT * FROM Game WHERE name = ${name}`	
 }
 
 // Obtém um jogo pelo ID
 async function getGameById(gameId) {
-  return await prisma.game.findUnique({
-    where: {
-      id: gameId,
-    },
-  });
+  return await prisma.$queryRaw`SELECT * FROM Game WHERE id = ${gameId}`
 }
 
 // Atualiza um jogo pelo ID
