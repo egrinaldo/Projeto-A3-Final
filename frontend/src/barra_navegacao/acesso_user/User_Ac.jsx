@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './User_Ac.css'
 export default function UserAcess() {
     return (
@@ -5,7 +6,7 @@ export default function UserAcess() {
             <a href="/Login">
                 <img src="src/assets/img_barnav/controle-de-video-game.png" alt="Logo Do Usuario" />
             </a>
-            <p><a href="/Login">Entrar</a></p>
+            <p><Link to="/Login">Entrar</Link></p>
         </div>
     )
 }
