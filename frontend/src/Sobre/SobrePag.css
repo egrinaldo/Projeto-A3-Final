@@ -1,0 +1,709 @@
+/*CONFIGURAÇÒES DA IMAGEM DA ABA SOBRE*/
+
+
+
+.imgC img{
+    display: flex;
+    width: 100%;
+    height: 300px;
+  }
+  
+  /*CONFIGURAÇÒES DO TEXTO ABA SOBRE*/
+  
+  .acredito{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+  }
+  
+  .corpo h1{
+    font-family: 'Roboto', sans-serif;
+    color: azure;
+    text-align: center;
+    font-size: 55px;
+  }
+  
+  .corpo p{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: azure;
+    font-size: 20px;
+  }
+  .corpo h2{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: azure;
+    font-size: 30px;
+    padding: 100px;
+  }
+  
+  .acredimg {
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    height: 700px;
+  }
+  
+  .acredtxt {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    flex-flow: row wrap;
+    width: 35%;
+  }
+  .acredito h2{
+    font-size: 30px;
+    padding: 25px;
+  }
+  .acredito p{
+    text-align: center;
+  }
+
+  /*BOTÃO PARA CHAMADA DA TELA CADASTRO*/
+.cadast{
+  color: azure;
+  text-decoration: none;
+}
+.bn {
+  --border-radius: 25px;
+  --border-width: 7px;
+  appearance: none;
+  position: relative;
+  padding: 1em 2em;
+  border: 0;
+  background-color: #212121;
+  font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffff;
+  z-index: 2;
+}
+
+.bn::after {
+  --m-i: linear-gradient(#000, #000);
+  --m-o: content-box, padding-box;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--border-width);
+  background-image: conic-gradient(
+		#ff0080,
+		#ff0080,
+		#ff0080,
+		#ff0080,
+		#ff0080,
+		#ff0080,
+		#ff0080
+	);
+  -webkit-mask-image: var(--m-i), var(--m-i);
+  mask-image: var(--m-i), var(--m-i);
+  -webkit-mask-origin: var(--m-o);
+  mask-origin: var(--m-o);
+  mask-clip: var(--m-o);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  filter: hue-rotate(0);
+  animation: rotate-hue634 linear 500ms infinite;
+  animation-play-state: paused;
+  border-radius: 20px;
+  border-color: #000;
+}
+
+.bn:hover::after {
+  animation-play-state: running;
+  border-radius: 10px;
+}
+
+@keyframes rotate-hue634 {
+  to {
+    filter: hue-rotate(1turn);
+  }
+}
+
+.bn,
+.bn::after {
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+button:active {
+  --border-width: 5px;
+}
+
+.bn {
+  padding: 0.9em 1.6em;
+  border: none;
+  outline: none;
+  color: #FFF;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 32px;
+}
+
+.bn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(46, 46, 46);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.bn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #07d888, #e40851, #2f00ff, #00ff37,
+      #ec0808, #2600ff, #0bd157, #2f00ff
+);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing345 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 20px;
+  opacity: 0;
+}
+
+@keyframes glowing345 {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.bn:hover::before {
+  opacity: 1;
+}
+
+.bn:active:after {
+  background: transparent;
+}
+
+.bn:active {
+  color: #000;
+  font-weight: bold;
+}
+
+/*==================================================================================*/
+
+/*TEXTO E IMG ABA ACESSIBILIDADE*/
+
+.acess{
+  margin-top: 125px;
+}
+.acredtxt{
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: -10%;
+  flex-flow: row wrap;
+  width: 35%;
+}
+
+.acredimg{
+  display: flex;
+  justify-content: center;
+  margin-top: -10%;
+  width: 35%;
+  height: 500px;
+}
+
+.acredito2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+}
+.acredimg2 {
+  display: flex;
+  justify-content: center;
+  margin-top: -5%;
+  width: 35%;
+  height: 500px;
+}
+
+.acredtxt2 {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: -5%;
+  flex-flow: row wrap;
+  width: 35%;
+}
+.acredito2 h2{
+  font-size: 30px;
+  padding: 25px;
+}
+.acredito2 p{
+  text-align: justify;
+}
+
+/*TEXTO E IMG ABA SEGURANÇA*/
+
+.seg{
+  margin-top: -11%;
+}
+
+.acredito3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+}
+.acredimg3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 600px;
+  width: 35%;
+  height: 500px;
+}
+
+.acredtxt3 {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 550px;
+  flex-flow: row wrap;
+  width: 35%;
+}
+.acredito3 h2{
+  font-size: 30px;
+  padding: 25px;
+}
+.acredito3 p{
+  text-align: center;
+}
+
+/*FOOTER COPY BASE*/
+
+footer {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3d3b3b;
+  color: #ffffff;
+  box-sizing: border-box;
+  height: 66px;
+  margin-top: 350px;
+  }
+
+
+
+  
+
+/* RESONSIVIDADE PARA DISPOSITIVOS MOVEIS MENU - largura 360px X 450px */
+
+@media (min-width: 360px) and (max-width: 450px){
+  /*CONFIGURAÇÒES DA IMAGEM DA ABA SOBRE*/
+  .imgC img{
+      display: flex;
+      width: 100%;
+      height: 200px;
+    }
+  
+    /*CONFIGURAÇÒES DO TEXTO ABA SOBRE*/
+  
+  
+  .corpo h1{
+      font-family: 'Roboto', sans-serif;
+      color: azure;
+      text-align: center;
+      font-size: 40px;
+    }
+    
+    .corpo p{
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      color: azure;
+      font-size: 12px;
+      padding: 10px;
+    }
+    .corpo h2{
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      color: azure;
+      font-size: 30px;
+      padding: 100px;
+    }
+    
+    .acredito{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 400px;
+    }
+    .acredimg {
+      display: flex;
+      justify-content: center;
+      width: 35%;
+      height: 300px;
+    }
+  
+    .acredimg img{
+      display: flex;
+      width: 200px;
+      height: 300px;
+      margin-top: -20%;
+   
+    }
+    
+    .acredtxt {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: 20px;
+      flex-flow: row wrap;
+      width: 30%;
+      margin-left: 10%;
+    }
+    .acredito h2{
+      font-size: 30px;
+      padding: 10px;
+    }
+    .acredito p{
+      text-align: center;
+    }
+  
+    /*==================================================================================*/
+  
+  /*TEXTO E IMG ABA ACESSIBILIDADE*/
+  
+  .acess{
+      margin-top: 125px;
+    }
+    .acredtxt{
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: -10%;
+      flex-flow: row wrap;
+      width: 35%;
+    }
+    
+    .acredimg2{
+      display: flex;
+      justify-content: center;
+      margin-top: -10%;
+      width: 35%;
+      height: 500px;
+    }
+  
+    .acredimg2 img{
+      display: flex;
+      width: 250px;
+      height: 400px;
+      margin-top: 60%;
+    }
+    
+    .acredito2{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 400px;
+    }
+    .acredimg2 {
+      display: flex;
+      justify-content: center;
+      margin-top: -5%;
+      width: 35%;
+      height: 500px;
+    }
+    
+    .acredtxt2 {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: -5%;
+      flex-flow: row wrap;
+      width: 35%;
+      margin-right: 10%;
+    }
+    .acredito2 h2{
+      font-size: 30px;
+      padding: 25px;
+    }
+    .acredito2 p{
+      text-align: justify;
+    }
+    
+    /*TEXTO E IMG ABA SEGURANÇA*/
+    
+    .seg{
+      margin-top: -11%;
+    }
+    
+    .acredito3{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 400px;
+    }
+    .acredimg3 {
+      display: flex;
+      justify-content: center;
+      margin-top: 350px;
+      width: 35%;
+      height: 500px;
+    }
+  
+    .acredimg3 img{
+      display: flex;
+      width: 200px;
+      height: 300px;
+      margin-top: 60%;
+    }
+    
+    .acredtxt3 {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: 200px;
+      flex-flow: row wrap;
+      width: 45%;
+      margin-left: 10%;
+    }
+    .acredito3 h2{
+      font-size: 25px;
+      padding: 20px;
+    }
+    .acredito3 p{
+      text-align: center;
+    }
+    
+    /*FOOTER COPY BASE*/
+    
+    footer {
+      width: 100%;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #3d3b3b;
+      color: #ffffff;
+      box-sizing: border-box;
+      height: 66px;
+      margin-top: 350px;
+      }
+  
+  footer h2{
+    font-size: 15px;
+    text-align: center;
+  }
+    
+  }
+  
+  
+  /* RESONSIVIDADE PARA DISPOSITIVOS MOVEIS MENU - largura 760px X 820px */
+  
+  @media (min-width: 760px) and (max-width: 820px){
+  /*CONFIGURAÇÒES DO TEXTO ABA SOBRE*/
+  
+  
+  .corpo h1{
+      font-family: 'Roboto', sans-serif;
+      color: azure;
+      text-align: center;
+      font-size: 55px;
+    }
+    
+    .corpo p{
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      color: azure;
+      font-size: 20px;
+      padding: 10px;
+    }
+    .corpo h2{
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      color: azure;
+      font-size: 30px;
+      padding: 100px;
+    }
+    
+    .acredito{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 400px;
+    }
+    .acredimg {
+      display: flex;
+      justify-content: center;
+      width: 35%;
+      height: 700px;
+    }
+    
+    .acredtxt {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: 20px;
+      flex-flow: row wrap;
+      width: 35%;
+      margin-left: 10%;
+    }
+    .acredito h2{
+      font-size: 30px;
+      padding: 25px;
+    }
+    .acredito p{
+      text-align: center;
+    }
+    /*==================================================================================*/
+  
+  /*TEXTO E IMG ABA ACESSIBILIDADE*/
+  
+  .acess{
+      margin-top: 125px;
+    }
+    .acredtxt{
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: -10%;
+      flex-flow: row wrap;
+      width: 35%;
+    }
+    
+    .acredimg{
+      display: flex;
+      justify-content: center;
+      margin-top: -10%;
+      width: 35%;
+      height: 500px;
+    }
+    
+    .acredito2{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 400px;
+    }
+    .acredimg2 {
+      display: flex;
+      justify-content: center;
+      margin-top: -5%;
+      width: 35%;
+      height: 500px;
+    }
+    
+    .acredtxt2 {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: -5%;
+      flex-flow: row wrap;
+      width: 35%;
+      margin-right: 10%;
+    }
+    .acredito2 h2{
+      font-size: 30px;
+      padding: 25px;
+    }
+    .acredito2 p{
+      text-align: justify;
+    }
+    
+    /*TEXTO E IMG ABA SEGURANÇA*/
+    
+    .seg{
+      margin-top: -11%;
+    }
+    
+    .acredito3{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 400px;
+    }
+    .acredimg3 {
+      display: flex;
+      justify-content: center;
+      margin-top: 600px;
+      width: 35%;
+      height: 500px;
+    }
+    
+    .acredtxt3 {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: 550px;
+      flex-flow: row wrap;
+      width: 35%;
+      margin-left: 10%;
+    }
+    .acredito3 h2{
+      font-size: 30px;
+      padding: 25px;
+    }
+    .acredito3 p{
+      text-align: center;
+    }
+    
+    /*FOOTER COPY BASE*/
+    
+    footer {
+      width: 100%;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #3d3b3b;
+      color: #ffffff;
+      box-sizing: border-box;
+      height: 66px;
+      margin-top: 350px;
+      }
+    
+  }
+  
