@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Login.css'
 
 export default function Login_User() {
@@ -24,7 +25,7 @@ export default function Login_User() {
                   
                         <button className='Botao_Log2'><a href="./MinhaArea">Logar</a></button>
                         <div className='Login_Dir2'>
-                            <p>Não Tem Conta ? <a href="/Cadastro">Cadastrar</a></p>
+                            <p>Não Tem Conta ? <Link to='/Cadastro'>Cadastre-se</Link></p>
                         </div>
 
                         <div className='Politica'>

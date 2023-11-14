@@ -1,6 +1,7 @@
 
-import { useState } from 'react'
-import './Cadastro.css'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Cadastro.css';
 
 export default function Cad_User() {
 
@@ -60,7 +61,7 @@ export default function Cad_User() {
           <button type='submit' className='Botao_Log'>Inscreva-se</button>
 
           <div className='Login_Dir'>
-            <p>Já é Inscrito teste? <a href="/Login">Entrar</a></p>
+            <p>Já é inscrito? <Link to='/Login'>Faça o login</Link></p>
           </div>
 
         </form>
