@@ -1,9 +1,9 @@
 
 import axios from 'axios';
 import { Controller, useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import './Cadastro.css';
-
 
 export default function Cad_User() {
 
@@ -15,6 +15,8 @@ export default function Cad_User() {
     // faz a comunicação com o axios
     const response =  await axios.post('http://localhost:3000/users', data)
 
+
+    toast.success('Cadastro realizado com sucesso!');
     console.log(response.data);
   };
 

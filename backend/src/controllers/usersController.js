@@ -78,9 +78,9 @@ async function deleteUser(req, res) {
 async function login (req, res){
   const {email, password} = req.body
 
+  console.log('bateu')
   try {
     const user = await userService.login(email, password)
-
     if (!user){
       return res.status(401).json({error: 'Usuário não encontrado'})
     }

@@ -27,16 +27,14 @@ async function login(email, password) {
 
   if (!user){
     return false;
+
   }
-
-  const passwordMatch = await bcrypt.compare(password, user.password); 
-
-  if (!passwordMatch){
+  if (password !== user[0].password){
+    
     return false;
   }
   
   return user;
- 
 }
 
 module.exports = {

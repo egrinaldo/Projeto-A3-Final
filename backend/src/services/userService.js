@@ -9,15 +9,8 @@ async function getAllUsers() {
 
 // Cria um novo usuário
 async function createUser(userData) {
-  const saltRounds = 10;
-  const hashedPassword = await bcrypt.hash(userData.password, saltRounds);
 
-  const userWithHashedPassword = {
-    ...userData,
-    password: hashedPassword,
-  };
-
-  return await userRepository.createUser(userWithHashedPassword);
+  return await userRepository.createUser(userData);
 }
 
 // Obtém um usuário pelo ID
