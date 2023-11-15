@@ -11,13 +11,20 @@ export default function Login_User() {
     const onSubmit = async (data) => {
         console.log(data); // Os dados do formulário serão impressos aqui
     
+
+        try {
         // faz a comunicação com o axios
         const response =  await axios.post('http://localhost:3000/users/login', data)
-    
         toast.success('Login realizado com sucesso!')
         
         const userLocalStorage = response.data;
         localStorage.setItem('user', JSON.stringify(userLocalStorage));
+        window.location.href = './MinhaArea';
+        
+        } catch (error) {
+            toast.error('Falha ao realizar login')
+        }
+       
       };
     
     return (
