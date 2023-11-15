@@ -1,7 +1,7 @@
 import { AiFillDelete } from 'react-icons/ai';
-import {BiEdit} from 'react-icons/bi';
+import { BiEdit } from 'react-icons/bi';
 
-import './Tab_Jogos.css'
+import './Tab_Jogos.css';
 
 export default function Tab_Jogos() {
   return (
@@ -13,7 +13,9 @@ export default function Tab_Jogos() {
             <th>NOME</th>
             <th>PLATAFORMA</th>
             <th>CATEGORIA</th>
-            <th>ESTADO DO JOGO</th>   
+            <th>ESTADO DO JOGO</th>
+            <th>EDITAR</th>
+            <th>EXCLUIR</th>           
         </tr>
         </thead>
         <tbody>
