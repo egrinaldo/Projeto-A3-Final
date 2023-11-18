@@ -45,9 +45,10 @@ async function deletePlatform(req, res) {
   }
 }
 
-async function getPlatformById(req, res) {
+async function getPlatformByUserId(req, res) {
+  console.log(`controller`)
   try{
-    const platform = await platformService.getPlatformById(req.params.id);
+    const platform = await platformService.getPlatformByUserId(req.params.id);
     res.json(platform);
   }
   catch(error){
@@ -61,5 +62,5 @@ module.exports = {
     createPlatform,
     updatePlatform,
     deletePlatform,
-    getPlatformById,
+    getPlatformByUserId,
 };

@@ -9,9 +9,7 @@ export default function Login_User() {
     const {handleSubmit, control} = useForm();
 
     const onSubmit = async (data) => {
-        console.log(data); // Os dados do formulário serão impressos aqui
     
-
         try {
         // faz a comunicação com o axios
         const response =  await axios.post('http://localhost:3000/users/login', data)

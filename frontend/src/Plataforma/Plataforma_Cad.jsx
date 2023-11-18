@@ -1,20 +1,68 @@
-import { AiOutlineClear } from 'react-icons/ai';
-import {HiSaveAs} from 'react-icons/hi';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
+import { AiFillDelete, AiOutlineClear } from 'react-icons/ai';
+import { BiEdit } from 'react-icons/bi';
+import { HiSaveAs } from 'react-icons/hi';
 import "./Plataforma_Cad.css";
+
 
 export default function Plataforma_Cad() {
 
+  const { handleSubmit, control } = useForm();
+  const [plataformas, setPlataformas] = useState([]);
+  const userLogado = JSON.parse(localStorage.getItem('user'));
+  const userId = userLogado.user[0].id;
+
+  const carregarPlataformas = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3000/platforms/${userId}`);
+      console.log(response.data)
+      setPlataformas(response.data);
+    } catch (error) {
+      toast.error('Falha ao carregar as plataformas');
+    }
+  };
+
+  useEffect(() => {
+    carregarPlataformas();
+  }, []); // O array vazio assegura que o useEffect seja executado apenas uma vez no montagem do componente
+
+  const onSubmit = async (data) => {
+   
+    const obj = { ...data, userId };
+    try {
+      const response = await axios.post('http://localhost:3000/platforms', obj);
+      toast.success('Plataforma cadastrada com sucesso!');
+      setPlataformas([...plataformas, response.data]);
+    } catch (error) {
+      toast.error('Falha ao cadastrar a plataforma');
+    }
+  };
+  
   return (
+    <>
     <div className="cad_Form">
       <div className="card_cadNome">
         <p>Cadastro da Plataforma</p>
 
       </div>
       <div>
-        <form className="Form_Jg" action="">
-          <input className="Pla_Game" type="text" placeholder="NOME DO JOGO" id="Jg_Game" required="required"/>
-
-
+        <form className="Form_Jg" onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+                            name="name"
+                            control={control}
+                            defaultValue=""
+                            rules={{ required: 'Digite o nome da plataforma'}}
+                            render={({ field, fieldState }) => (
+                           <>
+                            {/* <label>Nome</label> */}
+                            <input {...field} className='Pla_Game' placeholder='Nome da plataforma' id='Jg_Game' type='text' required />
+                                {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
+                           </>
+                             )} 
+                          />
 <div className='buttonsCadJg'>   
   <button id='limpar' type='reset'>< AiOutlineClear /></button> 
   <button id='salvar' type='submit'><HiSaveAs /></button>
@@ -24,5 +72,30 @@ export default function Plataforma_Cad() {
         </form>
       </div>
     </div>
+
+    <div className='Form_Tab'>
+    <table className='Form_Grid'>
+  <thead>
+    <tr className='Form_Name'>
+      <th>Id</th>
+      <th>Plataforma</th>
+      <th>Editar</th>
+      <th>Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+    {plataformas.map((item, index) => (
+      <tr key={index} className='Form_Dados'>
+        <td>{item.id}</td>
+        <td>{item.name}</td>
+        <td><button id='edit' type='submit'><BiEdit /></button></td>
+        <td><button id='excluir' type='reset'><AiFillDelete /></button></td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+    </div>
+    </>
+    
   );
 }
