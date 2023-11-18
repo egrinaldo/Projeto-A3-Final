@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { AiFillDelete, AiOutlineClear } from 'react-icons/ai';
@@ -24,6 +24,17 @@ export default function Plataforma_Cad() {
       toast.error('Falha ao carregar as plataformas');
     }
   };
+
+  const excluirPlataforma = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/platforms/${id}`);
+      toast.success('Plataforma excluída com sucesso!');
+      carregarPlataformas();
+    }
+    catch (error) {
+      toast.error('Falha ao excluir a plataforma');
+    }
+  }
 
   useEffect(() => {
     carregarPlataformas();
@@ -89,7 +100,7 @@ export default function Plataforma_Cad() {
         <td>{item.id}</td>
         <td>{item.name}</td>
         <td><button id='edit' type='submit'><BiEdit /></button></td>
-        <td><button id='excluir' type='reset'><AiFillDelete /></button></td>
+        <td><button id='excluir' onClick={()=> excluirPlataforma(item.id)}><AiFillDelete /></button></td>
       </tr>
     ))}
   </tbody>
