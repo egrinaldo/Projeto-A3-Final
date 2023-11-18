@@ -15,7 +15,14 @@ export default function Cad_Jogos() {
   const userId = userLogado.user[0].id;
 
   const onSubmit = async (data) => {
-   console.log(data);
+   try {
+    const obj = { ...data, userId };
+      await axios.post('http://localhost:3000/games', obj);
+      toast.success('Jogo cadastrado com sucesso!');
+    }
+    catch (error) {
+      toast.error('Falha ao cadastrar o jogo!');
+    }
   };
 
   const carregarDados = async () => {
