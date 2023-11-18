@@ -9,61 +9,26 @@ export default function Tab_Jogos() {
       <table className='Form_Grid'>
         <thead>
         <tr className='Form_Name'>
-            <th>AVALIAÇÃO</th>
-            <th>NOME</th>
-            <th>PLATAFORMA</th>
-            <th>CATEGORIA</th>
-            <th>ESTADO DO JOGO</th>
-            <th>EDITAR</th>
-            <th>EXCLUIR</th>           
+            <th>Nota</th>
+            <th>Nome</th>
+            <th>Plataforma</th>
+            <th>Categoria</th>
+            <th>Status</th>
+            <th>Editar</th>
+            <th>Excluir</th>           
         </tr>
         </thead>
         <tbody>
         <tr className='Form_Dados'>
             <td>9</td>
-            <td>ZELDA</td>
-            <td>CONSOLE</td>
+            <td>Zelda</td>
+            <td>Nitendo</td>
             <td>RPG</td>
             <td>ZERADO</td>
             <td><button id='edit' type='submit'><BiEdit /></button></td>
             <td><button id='excluir' type='reset'>< AiFillDelete /></button></td>    
         </tr>
-        <tr className='Form_Dados'>
-            <td>9</td>
-            <td>ZELDA</td>
-            <td>CONSOLE</td>
-            <td>RPG</td>
-            <td>ZERADO</td>
-            <td><button id='edit' type='submit'><BiEdit /></button></td>
-            <td><button id='excluir' type='reset'><AiFillDelete /></button></td>  
-        </tr>
-        <tr className='Form_Dados'>
-            <td>9</td>
-            <td>ZELDA</td>
-            <td>CONSOLE</td>
-            <td>RPG</td>
-            <td>ZERADO</td>
-            <td><button id='edit' type='submit'><BiEdit /></button></td>
-            <td><button id='excluir' type='reset'>< AiFillDelete /></button></td>          
-        </tr>
-        <tr className='Form_Dados'>
-            <td>9</td>
-            <td>ZELDA</td>
-            <td>CONSOLE</td>
-            <td>RPG</td>
-            <td>ZERADO</td>
-            <td><button id='edit' type='submit'><BiEdit /></button></td>
-            <td><button id='excluir' type='reset'>< AiFillDelete /></button></td>          
-        </tr>
-        <tr className='Form_Dados'>
-            <td>9</td>
-            <td>ZELDA</td>
-            <td>CONSOLE</td>
-            <td>RPG</td>
-            <td>ZERADO</td>
-            <td><button id='edit' type='submit'><BiEdit /></button></td>
-            <td><button id='excluir' type='reset'>< AiFillDelete /></button></td>           
-        </tr>  
+      
         </tbody>
         
       </table>
