@@ -18,7 +18,6 @@ export default function Plataforma_Cad() {
   const carregarPlataformas = async () => {
     try {
       const response = await axios.get(`http://localhost:3000/platforms/${userId}`);
-      console.log(response.data)
       setPlataformas(response.data);
     } catch (error) {
       toast.error('Falha ao carregar as plataformas');
@@ -46,7 +45,7 @@ export default function Plataforma_Cad() {
     try {
       const response = await axios.post('http://localhost:3000/platforms', obj);
       toast.success('Plataforma cadastrada com sucesso!');
-      setPlataformas([...plataformas, response.data]);
+      setPlataformas([...plataformas, response.data[0]]);
     } catch (error) {
       toast.error('Falha ao cadastrar a plataforma');
     }

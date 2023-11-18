@@ -46,7 +46,7 @@ async function deletePlatform(req, res) {
 }
 
 async function getPlatformByUserId(req, res) {
-  console.log(`controller`)
+ 
   try{
     const platform = await platformService.getPlatformByUserId(req.params.id);
     res.json(platform);
