@@ -2,15 +2,22 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { AiOutlineClear } from 'react-icons/ai';
+import { AiFillDelete, AiOutlineClear } from 'react-icons/ai';
+import { BiEdit } from 'react-icons/bi';
 import { HiSaveAs } from 'react-icons/hi';
 import "./Cad_Jogos.css";
+import './Tab_Jogos.css';
+
+
 
 export default function Cad_Jogos() {
 
   const { handleSubmit, control } = useForm();
+
   const [plataformas, setPlataformas] = useState([]);
   const [categorias, setCategorias] = useState([]);
+  const [games, setGames] = useState([]);
+
   const userLogado = JSON.parse(localStorage.getItem('user'));
   const userId = userLogado.user[0].id;
 
@@ -29,8 +36,13 @@ export default function Cad_Jogos() {
     try {
       const platforms = await axios.get(`http://localhost:3000/platforms/${userId}`);
       setPlataformas(platforms.data);
+
       const categorias = await axios.get(`http://localhost:3000/categories`);
       setCategorias(categorias.data);
+
+      const games = await axios.get(`http://localhost:3000/games/${userId}`);
+      setGames(games.data);
+      
     } catch (error) {
       toast.error('Falha ao carregar os dados');
     }
@@ -40,8 +52,20 @@ export default function Cad_Jogos() {
     carregarDados();
   }, []);
 
+  const excluirGame = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/games/${id}`);
+      toast.success('Jogo excluído com sucesso!');
+      carregarDados();
+    }
+    catch (error) {
+      toast.error('Falha ao excluir o jogo');
+    }
+  }
+
   
   return (
+    <>
     <div className="cad_Form">
       <div className="card_cadNome">
         <p>MINHA ÁREA</p>
@@ -150,5 +174,36 @@ export default function Cad_Jogos() {
         </form>
       </div>
     </div>
+    <div className='Form_Tab'>
+      <table className='Form_Grid'>
+        <thead>
+        <tr className='Form_Name'>
+            <th>Nota</th>
+            <th>Nome</th>
+            <th>Plataforma</th>
+            <th>Categoria</th>
+            <th>Status</th>
+            <th>Editar</th>
+            <th>Excluir</th>           
+        </tr>
+        </thead>
+        <tbody>
+        {games.map((item, index) => (
+      <tr key={index} className='Form_Dados'>
+        <td>{item.rated}</td>
+        <td>{item.name}</td>
+        <td>{item.platformId}</td>
+        <td>{item.categoryId}</td>
+        <td>{item.status}</td>
+        <td><button id='edit'><BiEdit /></button></td>
+        <td><button id='excluir' onClick={()=> excluirGame(item.id)}><AiFillDelete /></button></td>
+      </tr>
+    ))}
+        </tbody> 
+      </table>
+    </div>
+    </>
+    
+    
   );
 }

@@ -1,4 +1,4 @@
-const gameRepository = require('../repositories/gamersRepository');
+const gameRepository = require("../repositories/gamersRepository");
 
 // Obtém todos os jogos
 async function getAllGames() {
@@ -11,8 +11,8 @@ async function createGame(gameData) {
 }
 
 // Obtém um jogo pelo ID
-async function getGameById(gameId) {
-  return await gameRepository.getGameById(gameId);
+async function getGamesByUserId(userId) {
+  return await gameRepository.getGamesByUserId(userId);
 }
 
 // Atualiza um jogo pelo ID
@@ -28,7 +28,7 @@ async function deleteGame(gameId) {
 module.exports = {
   getAllGames,
   createGame,
-  getGameById,
+  getGamesByUserId,
   updateGame,
   deleteGame,
 };

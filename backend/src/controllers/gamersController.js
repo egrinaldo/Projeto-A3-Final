@@ -1,4 +1,4 @@
-const gameService = require('../services/gameService');
+const gameService = require("../services/gameService");
 
 // Obtém todos os jogos
 async function getAllGames(req, res) {
@@ -7,36 +7,36 @@ async function getAllGames(req, res) {
     res.json(games);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Erro ao buscar jogos.' });
+    res.status(500).json({ error: "Erro ao buscar jogos." });
   }
 }
 
 // Cria um novo jogo
 async function createGame(req, res) {
   try {
-    console.log(req.body)
-    const newGame = await gameService.createGame(req.body);   
+    console.log(req.body);
+    const newGame = await gameService.createGame(req.body);
     res.status(201).json(newGame);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Erro ao criar jogo.' });
+    res.status(500).json({ error: "Erro ao criar jogo." });
   }
 }
 
 // Obtém um jogo pelo ID
-async function getGameById(req, res) {
-  const gameId = parseInt(req.params.id);
+async function getGamesByUserId(req, res) {
+  const userId = parseInt(req.params.id);
 
   try {
-    const game = await gameService.getGameById(gameId);
+    const game = await gameService.getGamesByUserId(userId);
     if (!game) {
-      res.status(404).json({ error: 'Jogo não encontrado.' });
+      res.status(404).json({ error: "Jogo não encontrado." });
     } else {
       res.json(game);
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Erro ao buscar jogo.' });
+    res.status(500).json({ error: "Erro ao buscar jogo." });
   }
 }
 
@@ -47,13 +47,13 @@ async function updateGame(req, res) {
   try {
     const updatedGame = await gameService.updateGame(gameId, req.body);
     if (!updatedGame) {
-      res.status(404).json({ error: 'Jogo não encontrado.' });
+      res.status(404).json({ error: "Jogo não encontrado." });
     } else {
       res.json(updatedGame);
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Erro ao atualizar jogo.' });
+    res.status(500).json({ error: "Erro ao atualizar jogo." });
   }
 }
 
@@ -64,20 +64,20 @@ async function deleteGame(req, res) {
   try {
     const deletedGame = await gameService.deleteGame(gameId);
     if (!deletedGame) {
-      res.status(404).json({ error: 'Jogo não encontrado.' });
+      res.status(404).json({ error: "Jogo não encontrado." });
     } else {
-      res.json({ message: 'Jogo excluído com sucesso.' });
+      res.json({ message: "Jogo excluído com sucesso." });
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Erro ao excluir jogo.' });
+    res.status(500).json({ error: "Erro ao excluir jogo." });
   }
 }
 
 module.exports = {
   getAllGames,
   createGame,
-  getGameById,
+  getGamesByUserId,
   updateGame,
   deleteGame,
 };
