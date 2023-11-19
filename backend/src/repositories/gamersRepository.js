@@ -32,7 +32,7 @@ async function createGame(gameData) {
     );`;
 
   if (gameCreated) {
-    return getGameByName(gameData.name);
+    return getGamesByUserId(gameData.userId);
   }
 }
 
@@ -42,7 +42,18 @@ async function getGameByName(name) {
 
 // Obtém um jogo pelo ID
 async function getGamesByUserId(userId) {
-  return await prisma.$queryRaw`SELECT * FROM Game WHERE userId = ${userId}`;
+  return await prisma.$queryRaw`SELECT
+  g.id,
+  g.userId AS userId,
+  p.name AS platformName,
+  c.name AS categoryName,
+  g.name,
+  g.rated,
+  g.status
+  FROM Game g
+  JOIN Platform p ON g.platformId = p.id
+  JOIN Category c ON g.categoryId = c.id
+  WHERE g.userId = ${userId}`;
 }
 
 // Atualiza um jogo pelo ID

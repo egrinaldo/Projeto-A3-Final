@@ -21,10 +21,11 @@ export default function Cad_Jogos() {
   const userLogado = JSON.parse(localStorage.getItem('user'));
   const userId = userLogado.user[0].id;
 
-  const onSubmit = async (data) => {
+  const cadastrarJogo = async (data) => {
    try {
     const obj = { ...data, userId };
-      await axios.post('http://localhost:3000/games', obj);
+      const game = await axios.post('http://localhost:3000/games', obj);
+      setGames([...games, game.data[0]]);
       toast.success('Jogo cadastrado com sucesso!');
     }
     catch (error) {
@@ -41,6 +42,7 @@ export default function Cad_Jogos() {
       setCategorias(categorias.data);
 
       const games = await axios.get(`http://localhost:3000/games/${userId}`);
+      console.log(games.data)
       setGames(games.data);
       
     } catch (error) {
@@ -72,7 +74,7 @@ export default function Cad_Jogos() {
 
       </div>
       <div>
-        <form className="Form_Jg" onSubmit={handleSubmit(onSubmit)}>
+        <form className="Form_Jg" onSubmit={handleSubmit(cadastrarJogo)}>
         <Controller
                             name="name"
                             control={control}
@@ -192,8 +194,8 @@ export default function Cad_Jogos() {
       <tr key={index} className='Form_Dados'>
         <td>{item.rated}</td>
         <td>{item.name}</td>
-        <td>{item.platformId}</td>
-        <td>{item.categoryId}</td>
+        <td>{item.platformName}</td>
+        <td>{item.categoryName}</td>
         <td>{item.status}</td>
         <td><button id='edit'><BiEdit /></button></td>
         <td><button id='excluir' onClick={()=> excluirGame(item.id)}><AiFillDelete /></button></td>
