@@ -21,11 +21,17 @@ export function AuthProvider({ children }) {
         setSignedIn(false);
     }, []);
 
+    const userLogado = useCallback(() => {
+        const userLogado = JSON.parse(localStorage.getItem('user'))
+        return userLogado.user[0].id
+    }, [])
+
     return (
         <AuthContext.Provider value={{
             signedIn: signedIn,
             signin,
-            signout
+            signout,
+            userLogado
         }}>
             {children}
         </AuthContext.Provider>

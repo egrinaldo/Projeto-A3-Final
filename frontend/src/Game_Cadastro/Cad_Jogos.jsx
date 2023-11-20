@@ -5,6 +5,7 @@ import toast from 'react-hot-toast'
 import { AiFillDelete, AiOutlineClear } from 'react-icons/ai'
 import { BiEdit } from 'react-icons/bi'
 import { HiSaveAs } from 'react-icons/hi'
+import { useAuth } from "../app/hooks/useAuth"
 import './Cad_Jogos.css'
 import './Tab_Jogos.css'
 
@@ -15,8 +16,9 @@ export default function Cad_Jogos() {
     const [categorias, setCategorias] = useState([])
     const [games, setGames] = useState([])
 
-    const userLogado = JSON.parse(localStorage.getItem('user'))
-    const userId = userLogado.user[0].id
+    const { userLogado } = useAuth();
+
+    const userId = userLogado();
 
     const cadastrarJogo = async (data) => {
         try {

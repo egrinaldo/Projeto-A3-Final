@@ -13,15 +13,13 @@ export function AuthGuard({ isPrivate }) {
     }
 
     if (signedIn && !isPrivate) {
-        //Redirecionar para /dashboard
-        return <Navigate to="/" replace />;
+        //Redirecionar para /minhaarea
+        return <Navigate to="/MinhaArea" replace />;
     }
-
 
     return (
         <Outlet />
     )
-
 }
 
 AuthGuard.propTypes = {

@@ -15,8 +15,6 @@ export function Router() {
         <BrowserRouter>
             <Routes>
                 <Route element={<AuthGuard isPrivate={false} />}>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/Sobre' element={<Sobre />} />
                     <Route path='/Login' element={<Login />} />
                     <Route path='/Cadastro' element={<Cadastro />} />
                 </Route>
@@ -25,6 +23,9 @@ export function Router() {
                     <Route path='/MinhaArea' element={<MinhaArea />} />
                     <Route path='/PlataformaCrud' element={<PlataformaCrud />} />
                 </Route>
+
+                <Route path='/' element={<Home />} />
+                <Route path='/Sobre' element={<Sobre />} />
             </Routes>
         </BrowserRouter>
     );
