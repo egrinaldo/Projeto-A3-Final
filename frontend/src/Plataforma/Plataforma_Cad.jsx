@@ -40,7 +40,7 @@ export default function Plataforma_Cad() {
   }, []); // O array vazio assegura que o useEffect seja executado apenas uma vez no montagem do componente
 
   const onSubmit = async (data) => {
-   
+
     const obj = { ...data, userId };
     try {
       const response = await axios.post('http://localhost:3000/platforms', obj);
@@ -50,62 +50,62 @@ export default function Plataforma_Cad() {
       toast.error('Falha ao cadastrar a plataforma');
     }
   };
-  
+
   return (
     <>
-    <div className="cad_Form">
-      <div className="card_cadNome">
-        <p>Cadastro da Plataforma</p>
+      <div className="cad_Form">
+        <div className="card_cadNome">
+          <p>Cadastro da Plataforma</p>
 
+        </div>
+        <div>
+          <form className="Form_Jg" onSubmit={handleSubmit(onSubmit)}>
+            <Controller
+              name="name"
+              control={control}
+              defaultValue=""
+              rules={{ required: 'Digite o nome da plataforma' }}
+              render={({ field, fieldState }) => (
+                <>
+                  {/* <label>Nome</label> */}
+                  <input {...field} className='Pla_Game' placeholder='Nome da plataforma' id='Jg_Game' type='text' required />
+                  {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
+                </>
+              )}
+            />
+            <div className='buttonsCadJg'>
+              <button id='limpar' type='reset'>< AiOutlineClear /></button>
+              <button id='salvar' type='submit'><HiSaveAs /></button>
+
+            </div>
+
+          </form>
+        </div>
       </div>
-      <div>
-        <form className="Form_Jg" onSubmit={handleSubmit(onSubmit)}>
-        <Controller
-                            name="name"
-                            control={control}
-                            defaultValue=""
-                            rules={{ required: 'Digite o nome da plataforma'}}
-                            render={({ field, fieldState }) => (
-                           <>
-                            {/* <label>Nome</label> */}
-                            <input {...field} className='Pla_Game' placeholder='Nome da plataforma' id='Jg_Game' type='text' required />
-                                {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
-                           </>
-                             )} 
-                          />
-<div className='buttonsCadJg'>   
-  <button id='limpar' type='reset'>< AiOutlineClear /></button> 
-  <button id='salvar' type='submit'><HiSaveAs /></button>
-   
-</div>
 
-        </form>
+      <div className='Form_Tab'>
+        <table className='Form_Grid'>
+          <thead>
+            <tr className='Form_Name'>
+              <th>Id</th>
+              <th>Plataforma</th>
+              <th>Editar</th>
+              <th>Excluir</th>
+            </tr>
+          </thead>
+          <tbody>
+            {plataformas.map((item, index) => (
+              <tr key={index} className='Form_Dados'>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td><button id='edit' type='submit'><BiEdit /></button></td>
+                <td><button id='excluir' onClick={() => excluirPlataforma(item.id)}><AiFillDelete /></button></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-    </div>
-
-    <div className='Form_Tab'>
-    <table className='Form_Grid'>
-  <thead>
-    <tr className='Form_Name'>
-      <th>Id</th>
-      <th>Plataforma</th>
-      <th>Editar</th>
-      <th>Excluir</th>
-    </tr>
-  </thead>
-  <tbody>
-    {plataformas.map((item, index) => (
-      <tr key={index} className='Form_Dados'>
-        <td>{item.id}</td>
-        <td>{item.name}</td>
-        <td><button id='edit' type='submit'><BiEdit /></button></td>
-        <td><button id='excluir' onClick={()=> excluirPlataforma(item.id)}><AiFillDelete /></button></td>
-      </tr>
-    ))}
-  </tbody>
-</table>
-    </div>
     </>
-    
+
   );
 }

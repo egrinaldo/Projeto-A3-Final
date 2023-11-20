@@ -6,25 +6,25 @@ import './Login.css';
 
 export default function Login_User() {
 
-    const {handleSubmit, control} = useForm();
+    const { handleSubmit, control } = useForm();
 
     const onSubmit = async (data) => {
-    
+
         try {
-        // faz a comunicação com o axios
-        const response =  await axios.post('http://localhost:3000/users/login', data)
-        toast.success('Login realizado com sucesso!')
-        
-        const userLocalStorage = response.data;
-        localStorage.setItem('user', JSON.stringify(userLocalStorage));
-        window.location.href = './MinhaArea';
-        
+            // faz a comunicação com o axios
+            const response = await axios.post('http://localhost:3000/users/login', data)
+            toast.success('Login realizado com sucesso!')
+
+            const userLocalStorage = response.data;
+            localStorage.setItem('user', JSON.stringify(userLocalStorage));
+            window.location.href = './MinhaArea';
+
         } catch (error) {
             toast.error('Falha ao realizar login')
         }
-       
-      };
-    
+
+    };
+
     return (
         <div>
             <div className="Login_Box2">
@@ -44,34 +44,34 @@ export default function Login_User() {
                             name="email"
                             control={control}
                             defaultValue=""
-                            rules={{ required: 'Digite o seu e-mail'}}
+                            rules={{ required: 'Digite o seu e-mail' }}
                             render={({ field, fieldState }) => (
-                            <div className='Inputs2'>
-                                {/* <label>Nome</label> */}
-                                <input {...field}  placeholder='Digite o seu e-mail' type='email' required />
-                                {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
-                            </div>
-                             )} 
-                          />
+                                <div className='Inputs2'>
+                                    {/* <label>Nome</label> */}
+                                    <input {...field} placeholder='Digite o seu e-mail' type='email' required />
+                                    {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
+                                </div>
+                            )}
+                        />
 
-                          
+
                         <Controller
                             name="password"
                             control={control}
                             defaultValue=""
-                            rules={{ required: 'Digite a sua senha'}}
+                            rules={{ required: 'Digite a sua senha' }}
                             render={({ field, fieldState }) => (
-                            <div className='Inputs2'>
-                                {/* <label>Nome</label> */}
-                                <input {...field}  placeholder='Digite sua senha' type='password' required />
-                                {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
-                            </div>
-                             )} 
-                          />
-                          
+                                <div className='Inputs2'>
+                                    {/* <label>Nome</label> */}
+                                    <input {...field} placeholder='Digite sua senha' type='password' required />
+                                    {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
+                                </div>
+                            )}
+                        />
+
                         <button className='Botao_Log2' type='subtmit'>Entrar</button>
 
-                        
+
                         <div className='Login_Dir2'>
                             <p>Não Tem Conta ? <Link to='/Cadastro'>Cadastre-se</Link></p>
                         </div>

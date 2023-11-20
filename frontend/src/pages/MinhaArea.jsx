@@ -4,11 +4,11 @@ import NavBar_User from "../barra_navegacao/barnav_user";
 
 
 export default function MinhaArea() {
-  return (
-    <div>
-      <NavBar_User/>
-      <Bar_User />
-      <Cad_Jogos />
-    </div>
-  )
+    return (
+        <div>
+            <NavBar_User />
+            <Bar_User />
+            <Cad_Jogos />
+        </div>
+    )
 }

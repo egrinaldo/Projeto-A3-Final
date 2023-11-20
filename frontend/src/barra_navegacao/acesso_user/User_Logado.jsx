@@ -4,7 +4,7 @@ export default function UserLogado() {
         localStorage.clear();
         window.location.href = '/';
     }
-    
+
     return (
         <div className='UserB'>
             <a href="/">
