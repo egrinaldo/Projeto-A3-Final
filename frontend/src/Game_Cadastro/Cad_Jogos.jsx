@@ -22,7 +22,7 @@ export default function Cad_Jogos() {
         try {
             const obj = { ...data, userId }
             const game = await axios.post('http://localhost:3000/games', obj)
-            setGames([...games, game.data[0]])
+            setGames(game.data)
             toast.success('Jogo cadastrado com sucesso!')
         } catch (error) {
             toast.error('Falha ao cadastrar o jogo!')
