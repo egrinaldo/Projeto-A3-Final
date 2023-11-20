@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2? family= Teko:wght@300 & display=swap");
 
 /* BASE DO FORMULARIO */
-.cad_Form{
+.cad_Form {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -12,9 +12,9 @@
     background: #121212;
     width: 100vw;
     height: 3rem;
-/* CARD DO NOME 'MEUS FAVORITOS' */
+    /* CARD DO NOME 'MEUS FAVORITOS' */
 }
-.card_cadNome{
+.card_cadNome {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,7 @@
     margin-left: 1%;
 }
 
-.card_cadNome p{
+.card_cadNome p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,10 +38,9 @@
 
 /* ================================================================================================ */
 
-
 /* DESIGN DO CARD IMPUT DO FORMULARIO */
 
-.Form_Jg{
+.Form_Jg {
     display: flex;
     flex-direction: row;
     margin-left: 1%;
@@ -59,32 +58,31 @@
     caret-color: rgb(152, 88, 255);
     color: rgb(212, 212, 212);
     font-size: 12px;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
     margin: 2%;
     margin-top: 2%;
-  }
-  
+}
 
-  /* ============================================================================================= */
+/* ============================================================================================= */
 
-  /* DESIGN DO CARD IMPUT FILE DO FORMULARIO */
+/* DESIGN DO CARD IMPUT FILE DO FORMULARIO */
 
-  .text_Arquiv{
+.text_Arquiv {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .text_Arquiv span{
+.text_Arquiv span {
     text-align: center;
     margin-top: 7%;
-  }
+}
 
-  #Jg_Img{
+#Jg_Img {
     display: none;
-  }
+}
 
-  .Jg_Arquiv {
+.Jg_Arquiv {
     display: block;
     width: 15%;
     height: 40px;
@@ -96,19 +94,19 @@
     caret-color: rgb(152, 88, 255);
     color: #7b7b7b;
     font-size: 12px;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
     margin: 6px;
-  }
-  
-  .Jg_Arquiv:focus,
-  .Jg_Arquiv:valid {
+}
+
+.Jg_Arquiv:focus,
+.Jg_Arquiv:valid {
     border: 2px solid rgb(152, 88, 255);
-    transition-duration: .2s;
-  }
+    transition-duration: 0.2s;
+}
 
-  /* AJUSTE NA LARGURA DO SELECT  */
+/* AJUSTE NA LARGURA DO SELECT  */
 
-  .Jg_Select {
+.Jg_Select {
     display: block;
     align-items: center;
     justify-content: center;
@@ -120,61 +118,57 @@
     padding: 0px 12px;
     outline: none;
     caret-color: rgb(152, 88, 255);
-    color:#7b7b7b;
+    color: #7b7b7b;
     font-size: 12px;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
     margin: 2%;
     margin-top: 2%;
-  }
-  
-  .Jg_Select:focus,
-  .Jg_Select:valid {
+}
+
+.Jg_Select:focus,
+.Jg_Select:valid {
     border: 2px solid rgb(152, 88, 255);
-    transition-duration: .2s;
-  }
+    transition-duration: 0.2s;
+}
 
-  /* ========================================================================================= */
-
-
+/* ========================================================================================= */
 
 /* AJUSTES NO ICONES LIMPAR E SALVAR NO CADASTRO DE JOGOS */
 
-.buttonsCadJg{
-  display: flex;
-  flex-direction: row;
-  margin-left: 20%;
-  background: none;
-  margin: 0;
-  padding: 0;
-  margin-top: 1.5%;
-
+.buttonsCadJg {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20%;
+    background: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 1.5%;
 }
 
-
-#limpar{
-  font-size: 30px;
-  background: none;
-  color: azure;
-  padding: 0;
-  margin: 0;
-  border: none;
+#limpar {
+    font-size: 30px;
+    background: none;
+    color: azure;
+    padding: 0;
+    margin: 0;
+    border: none;
 }
-#limpar:hover{
-  color: red;
-}
-
-#salvar{
-  font-size: 30px;
-  background: none;
-  color: azure;
-  padding: 0;
-  margin: 0;
-  border: none;
-  margin-left: 10px;
+#limpar:hover {
+    color: red;
 }
 
-#salvar:hover{
-  color: greenyellow;
+#salvar {
+    font-size: 30px;
+    background: none;
+    color: azure;
+    padding: 0;
+    margin: 0;
+    border: none;
+    margin-left: 10px;
+}
+
+#salvar:hover {
+    color: greenyellow;
 }
 
 /* RESPONSIVIDADE */

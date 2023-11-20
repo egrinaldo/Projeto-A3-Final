@@ -44,7 +44,7 @@ export default function Cad_Jogos() {
       const games = await axios.get(`http://localhost:3000/games/${userId}`);
       console.log(games.data)
       setGames(games.data);
-      
+
     } catch (error) {
       toast.error('Falha ao carregar os dados');
     }
@@ -65,7 +65,7 @@ export default function Cad_Jogos() {
     }
   }
 
-  
+
   return (
     <>
     <div className="cad_Form">
@@ -86,7 +86,7 @@ export default function Cad_Jogos() {
                             <input {...field} className='Jg_Game' placeholder='Nome do jogo' id='Jg_Game' type='text' required />
                                 {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
                            </>
-                             )} 
+                             )}
                           />
           <Controller
                             name="platformId"
@@ -105,7 +105,7 @@ export default function Cad_Jogos() {
                           </select>
                          {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
                            </>
-                             )} 
+                             )}
                           />
 
    <Controller
@@ -125,7 +125,7 @@ export default function Cad_Jogos() {
                           </select>
                          {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
                            </>
-                             )} 
+                             )}
                           />
 
 <Controller
@@ -143,7 +143,7 @@ export default function Cad_Jogos() {
                            </select>
                          {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
                            </>
-                             )} 
+                             )}
                           />
 
             <Controller
@@ -165,12 +165,12 @@ export default function Cad_Jogos() {
                     )}
                   />
 
-          
-<div className='buttonsCadJg'>    
-  <button id='limpar' type='reset'>< AiOutlineClear /></button> 
-  
+
+<div className='buttonsCadJg'>
+  <button id='limpar' type='reset'>< AiOutlineClear /></button>
+
   <button id='salvar' type='submit'><HiSaveAs /></button>
-   
+
 </div>
 
         </form>
@@ -186,7 +186,7 @@ export default function Cad_Jogos() {
             <th>Categoria</th>
             <th>Status</th>
             <th>Editar</th>
-            <th>Excluir</th>           
+            <th>Excluir</th>
         </tr>
         </thead>
         <tbody>
@@ -201,11 +201,9 @@ export default function Cad_Jogos() {
         <td><button id='excluir' onClick={()=> excluirGame(item.id)}><AiFillDelete /></button></td>
       </tr>
     ))}
-        </tbody> 
+        </tbody>
       </table>
     </div>
     </>
-    
-    
   );
 }
