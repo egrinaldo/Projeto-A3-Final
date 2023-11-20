@@ -14,7 +14,6 @@ async function getAllGames(req, res) {
 // Cria um novo jogo
 async function createGame(req, res) {
   try {
-    console.log(req.body);
     const newGame = await gameService.createGame(req.body);
     res.status(201).json(newGame);
   } catch (error) {

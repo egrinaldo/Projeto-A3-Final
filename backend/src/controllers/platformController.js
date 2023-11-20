@@ -11,56 +11,56 @@ async function getAllPlatforms(req, res) {
   }
 }
 
-async function createPlatform(req, res){
-  try{
-    console.log('controller')
+async function createPlatform(req, res) {
+  try {
+
     const platform = await platformService.createPlatform(req.body);
     res.json(platform);
   }
-  catch(error){
+  catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Erro ao criar plataformas.' });
   }
 }
 
 async function updatePlatform(req, res) {
-  try{
+  try {
     const platformUpdated = await platformService.updatePlatform(req.body);
     res.json(platformUpdated);
   }
-  catch(error){
+  catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Erro ao atualizar plataformas.' });
   }
 }
 
 async function deletePlatform(req, res) {
-  try{
+  try {
     const platformDeleted = await platformService.deletePlatform(req.params.id);
     res.json(platformDeleted);
   }
-  catch(error){
+  catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Erro ao deletar plataformas.' });
   }
 }
 
 async function getPlatformByUserId(req, res) {
- 
-  try{
+
+  try {
     const platform = await platformService.getPlatformByUserId(req.params.id);
     res.json(platform);
   }
-  catch(error){
+  catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Erro ao buscar plataforma.' });
   }
 }
 
 module.exports = {
-    getAllPlatforms,
-    createPlatform,
-    updatePlatform,
-    deletePlatform,
-    getPlatformByUserId,
+  getAllPlatforms,
+  createPlatform,
+  updatePlatform,
+  deletePlatform,
+  getPlatformByUserId,
 };

@@ -14,7 +14,7 @@ async function getAllUsers(req, res) {
 // Cria um novo usuário
 async function createUser(req, res) {
   try {
-    console.log('veio do front')
+
     const user = await userService.createUser(req.body);
     res.status(201).json(user);
   } catch (error) {
@@ -66,7 +66,7 @@ async function deleteUser(req, res) {
     if (!deletedUser) {
       res.status(404).json({ error: 'Usuário não encontrado.' });
     } else {
-      res.json({ message: 'Usuário excluído com sucesso.'});
+      res.json({ message: 'Usuário excluído com sucesso.' });
     }
   } catch (error) {
     console.error(error);
@@ -75,20 +75,18 @@ async function deleteUser(req, res) {
 }
 
 // Faz o login 
-async function login (req, res){
-  const {email, password} = req.body
-
-  console.log('bateu')
+async function login(req, res) {
+  const { email, password } = req.body
   try {
     const user = await userService.login(email, password)
-    if (!user){
-      return res.status(401).json({error: 'Usuário não encontrado'})
+    if (!user) {
+      return res.status(401).json({ error: 'Usuário não encontrado' })
     }
-    
-    res.status(200).json({user: user})
+
+    res.status(200).json({ user: user })
   } catch (error) {
     console.error(error)
-    res.status(500).json({error: 'Erro ao fazer login'})
+    res.status(500).json({ error: 'Erro ao fazer login' })
   }
 }
 
