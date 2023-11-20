@@ -173,11 +173,12 @@ export default function Cad_Jogos() {
                 <table className='Form_Grid'>
                     <thead>
                         <tr className='Form_Name'>
-                            <th>Nota</th>
+                            <th>Id</th>
                             <th>Nome</th>
                             <th>Plataforma</th>
                             <th>Categoria</th>
                             <th>Status</th>
+                            <th>Nota</th>
                             <th>Editar</th>
                             <th>Excluir</th>
                         </tr>
@@ -185,11 +186,12 @@ export default function Cad_Jogos() {
                     <tbody>
                         {games.map((item, index) => (
                             <tr key={index} className='Form_Dados'>
-                                <td>{item.rated}</td>
+                                <td>{item.id}</td>
                                 <td>{item.name}</td>
                                 <td>{item.platformName}</td>
                                 <td>{item.categoryName}</td>
                                 <td>{item.status}</td>
+                                <td>{item.rated}</td>
                                 <td><button id='edit'><BiEdit /></button></td>
                                 <td><button id='excluir' onClick={() => excluirGame(item.id)}><AiFillDelete /></button></td>
                             </tr>

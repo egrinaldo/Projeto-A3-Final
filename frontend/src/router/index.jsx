@@ -6,6 +6,7 @@ import Login from '../pages/Login';
 import MinhaArea from '../pages/MinhaArea';
 import PlataformaCrud from '../pages/PlataformaCrud';
 import Sobre from '../pages/Sobre';
+import { AuthGuard } from "./AuthGuard";
 
 
 // Esse arquivo serve para direcionar as rotas da aplicação, validando as rotas privadas e rotas públicas
@@ -13,13 +14,17 @@ export function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/Sobre' element={<Sobre />} />
-                <Route path='/Login' element={<Login />} />
-                <Route path='/Cadastro' element={<Cadastro />} />
-                <Route path='/MinhaArea' element={<MinhaArea />} />
-                <Route path='/PlataformaCrud' element={<PlataformaCrud />} />
+                <Route element={<AuthGuard isPrivate={false} />}>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/Sobre' element={<Sobre />} />
+                    <Route path='/Login' element={<Login />} />
+                    <Route path='/Cadastro' element={<Cadastro />} />
+                </Route>
 
+                <Route element={<AuthGuard isPrivate={true} />}>
+                    <Route path='/MinhaArea' element={<MinhaArea />} />
+                    <Route path='/PlataformaCrud' element={<PlataformaCrud />} />
+                </Route>
             </Routes>
         </BrowserRouter>
     );
