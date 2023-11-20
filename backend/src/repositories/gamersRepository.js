@@ -58,12 +58,18 @@ async function getGamesByUserId(userId) {
 
 // Atualiza um jogo pelo ID
 async function updateGame(gameId, gameData) {
-  return await prisma.game.update({
-    where: {
-      id: gameId,
-    },
-    data: gameData,
-  });
+  const gameUpdated =  await prisma.$executeRaw`UPDATE Game SET
+  
+   ${gameData.platformId},
+   ${gameData.categoryId},
+   ${gameData.name},
+   ${gameData.rated},
+   ${gameData.status}
+   ;`
+
+  if (gameCreated){
+   return getGameByName(gameData.name)
+  }
 }
 
 // Deleta um jogo pelo ID
