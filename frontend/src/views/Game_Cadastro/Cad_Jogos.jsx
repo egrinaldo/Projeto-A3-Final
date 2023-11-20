@@ -5,7 +5,7 @@ import toast from 'react-hot-toast'
 import { AiFillDelete, AiOutlineClear } from 'react-icons/ai'
 import { BiEdit } from 'react-icons/bi'
 import { HiSaveAs } from 'react-icons/hi'
-import { useAuth } from "../app/hooks/useAuth"
+import { useAuth } from "../../app/hooks/useAuth"
 import './Cad_Jogos.css'
 import './Tab_Jogos.css'
 
