@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import { AiFillDelete, AiOutlineClear } from 'react-icons/ai';
 import { BiEdit } from 'react-icons/bi';
 import { HiSaveAs } from 'react-icons/hi';
-import EditModal from './EditModal';
+import { EditModal } from './EditModal';
 import "./Plataforma_Cad.css";
 
 
@@ -38,7 +38,7 @@ export default function Plataforma_Cad() {
 
     useEffect(() => {
         carregarPlataformas();
-    }, []); // O array vazio assegura que o useEffect seja executado apenas uma vez no montagem do componente
+    }, [plataformas]); // O array vazio assegura que o useEffect seja executado apenas uma vez no montagem do componente
 
     const onSubmit = async (data) => {
 
@@ -123,9 +123,9 @@ export default function Plataforma_Cad() {
                 {modalVisible && (
                     <EditModal
                         platform={editingPlatform}
-                        onSave={(editedPlatform) => {
-                            // Implemente a lógica para salvar as alterações no backend
-                            console.log('Salvar alterações:', editedPlatform);
+                        onSave={() => {
+                            carregarPlataformas();
+                            toast.success('Plataforma editada com sucesso!');
                         }}
                         onClose={closeModal}
                     />

@@ -1,31 +1,55 @@
 // EditModal.js
+import axios from 'axios';
 import PropTypes from "prop-types";
-import { useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import './EditModal.css';
 
 export function EditModal({ platform, onSave, onClose }) {
-    const [editedName, setEditedName] = useState(platform.name);
 
-    const handleSave = () => {
-        onSave({ ...platform, name: editedName });
+    const { handleSubmit, control } = useForm();
+
+    const handleSave = (plataformas) => {
+        onSave({ ...plataformas });
         onClose();
     };
 
+    const editarPlataforma = async (data) => {
+        try {
+            console.log('bateu')
+            const obj = { ...data, id: platform.id }
+            const platforms = await axios.put('http://localhost:3000/platforms', obj)
+            handleSave(platforms.data);
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
-        <div className="modal">
-            <div className="modal-content">
-                <h2>Editar Platforma</h2>
-                <label htmlFor="editedName">Nome:</label>
-                <input
-                    type="text"
-                    id="editedName"
-                    value={editedName}
-                    onChange={(e) => setEditedName(e.target.value)}
-                />
-                <button onClick={handleSave}>Salvar</button>
-                <button onClick={onClose}>Fechar</button>
+        <form onSubmit={handleSubmit(editarPlataforma)}>
+            <div className="modal">
+                <div className="modal-content">
+                    <h2>Editar Platforma</h2>
+                    <label htmlFor="name">Nome:</label>
+                    <Controller
+                        name="name"
+                        control={control}
+                        defaultValue=""
+                        rules={{ required: 'Digite o nome da plataforma' }}
+                        render={({ field, fieldState }) => (
+                            <>
+                                {/* <label>Nome</label> */}
+                                <input {...field} className='Pla_Game' placeholder='Nome da plataforma' id='Jg_Game' type='text' required />
+                                {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
+                            </>
+                        )}
+                    />
+                    <button type='submit'>Salvar</button>
+                    <button onClick={onClose}>Fechar</button>
+                </div>
             </div>
-        </div>
+        </form>
+
     );
 }
 
