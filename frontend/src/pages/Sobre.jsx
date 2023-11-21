@@ -1,6 +1,5 @@
-import SobrePag from "../Sobre/SobrePag";
-import Navbar from "../barra_navegacao/barnav";
-
+import Navbar from '../views/barra_navegacao/barnav'
+import SobrePag from '../views/Sobre/SobrePag'
 
 export default function Sobre() {
     return (

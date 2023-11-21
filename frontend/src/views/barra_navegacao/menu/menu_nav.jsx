@@ -1,4 +1,4 @@
-import { useAuth } from '../../app/hooks/useAuth';
+import { useAuth } from '../../../app/hooks/useAuth';
 import './menu_nav.css';
 
 export default function NavMenu() {

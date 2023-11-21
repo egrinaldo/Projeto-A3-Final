@@ -1,6 +1,6 @@
-import Cad_Jogos from "../Game_Cadastro/Cad_Jogos";
-import Bar_User from "../Minha_Area/Barra_User";
-import NavBar_User from "../barra_navegacao/barnav_user";
+import Cad_Jogos from "../views/Game_Cadastro/Cad_Jogos";
+import Bar_User from "../views/Minha_Area/Barra_User";
+import NavBar_User from  '../views/barra_navegacao/barnav_user'
 
 
 export default function MinhaArea() {

@@ -1,4 +1,4 @@
-import Login_User from "../Login/Login";
+import Login_User from "../views/Login/Login";
 import './Login.css';
 
 export default function Login() {

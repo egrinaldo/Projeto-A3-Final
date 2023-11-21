@@ -1,5 +1,5 @@
-import Plataforma_Cad from "../Plataforma/Plataforma_Cad";
-import NavBar_User from "../barra_navegacao/barnav_user";
+import Plataforma_Cad from "../views/Plataforma/Plataforma_Cad";
+import NavBar_User from "../views/barra_navegacao/barnav_user";
 
 
 export default function PlataformaCrud() {
