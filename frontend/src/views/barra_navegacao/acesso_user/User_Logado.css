@@ -11,23 +11,26 @@
     align-items: center;
     width: 30px;
     height: 40px;
-    margin-left: 850px;
+    margin-left: 840px;
+    
 }
 
-.UserB a img{
+.UserB img{
     margin: 10px;
 }
+.UserB button{
+    background: none;
+    padding: 0;
+    margin: 0;
 
-.UserB a{
-    display: flex;
-    align-items: center;
+
 }
 
-.UserB p a{
+
+#butSairLogin  p{
     color: #cccccc;
     font-size: 11px;
     font-family: 'Open Sans', sans-serif,arial;
-    text-decoration: none;
 }
 
 @media (min-width: 1600px){
