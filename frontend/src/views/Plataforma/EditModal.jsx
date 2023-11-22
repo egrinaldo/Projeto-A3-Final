@@ -45,8 +45,8 @@ export function EditModal({ platform, onSave, onClose }) {
                         )}
                     />
                     <div id='butSaveLock'>
-                    <button className='btn' type='submit'>Salvar</button>
-                    <button className='btn' onClick={onClose}>Fechar</button>
+                    <button id='butSalvarFechar' type='submit'>Salvar</button>
+                    <button id='butSalvarFechar' onClick={onClose}>Fechar</button>
                     </div>
 
                 </div>

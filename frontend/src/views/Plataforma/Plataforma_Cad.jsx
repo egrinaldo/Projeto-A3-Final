@@ -7,6 +7,7 @@ import { BiEdit } from 'react-icons/bi';
 import { HiSaveAs } from 'react-icons/hi';
 import { EditModal } from './EditModal';
 import "./Plataforma_Cad.css";
+import "./Plataforma_Tab.css";
 
 
 export default function Plataforma_Cad() {
@@ -88,9 +89,8 @@ export default function Plataforma_Cad() {
                             )}
                         />
                         <div className='buttonsCadJg'>
-                            <button id='limpar' type='reset'>< AiOutlineClear /></button>
-                            <button id='salvar' type='submit'><HiSaveAs /></button>
-
+                            <button id='limpar' title='Limpar' type='reset'>< AiOutlineClear /></button>
+                            <button id='salvar' title='Salvar' type='submit'><HiSaveAs /></button>
                         </div>
 
                     </form>
@@ -110,10 +110,10 @@ export default function Plataforma_Cad() {
                     <tbody>
                         {plataformas.map((item, index) => (
                             <tr key={index} className='Form_Dados'>
-                                <td>{item.id}</td>
-                                <td>{item.name}</td>
-                                <td><button id='edit' onClick={() => openModal(item)}><BiEdit /></button></td>
-                                <td><button id='excluir' onClick={() => excluirPlataforma(item.id)}><AiFillDelete /></button></td>
+                                <td id='td_form'>{item.id}</td>
+                                <td id='td_form'>{item.name}</td>
+                                <td id='td_form'><button title='Editar' id='edit' onClick={() => openModal(item)}><BiEdit /></button></td>
+                                <td id='td_form'><button title='Excluir' id='excluir' onClick={() => excluirPlataforma(item.id)}><AiFillDelete /></button></td>
                             </tr>
                         ))}
                     </tbody>

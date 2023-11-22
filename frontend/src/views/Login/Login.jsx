@@ -77,7 +77,7 @@ export default function Login_User() {
                         </div>
 
                         <div className='Politica'>
-                            <a href="/">Política e Privacidade</a>
+                            <a href="/Politica">Política e Privacidade</a>
                         </div>
                         <div className='Return'>
                             <Link to='/'>Voltar para a Home</Link>

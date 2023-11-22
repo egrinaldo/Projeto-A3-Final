@@ -95,7 +95,12 @@ export default function Cad_User() {
                         <p>Já é inscrito? <Link to='/Login'>Faça o login</Link></p>
                     </div>
 
+                    <div className='Politica'>
+                        <a href="/Politica">Política e Privacidade</a>
+                    </div>
                 </form>
+
+
             </div>
 
         </div>

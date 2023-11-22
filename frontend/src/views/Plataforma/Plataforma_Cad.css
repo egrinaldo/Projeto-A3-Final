@@ -106,7 +106,7 @@
 
 
 #limpar{
-  font-size: 20px;
+  font-size: 28px;
   background: none;
   color: azure;
   padding: 0;
@@ -119,7 +119,7 @@
 }
 
 #salvar{
-  font-size: 20px;
+  font-size: 28px;
   background: none;
   color: azure;
   padding: 0;
@@ -131,5 +131,6 @@
 #salvar:hover{
   color: greenyellow;
 }
+
 
 /* RESPONSIVIDADE */

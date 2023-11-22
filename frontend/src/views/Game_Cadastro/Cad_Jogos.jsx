@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { Controller, useForm } from 'react-hook-form'
+import { Controller, set, useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { AiFillDelete, AiOutlineClear } from 'react-icons/ai'
 import { BiEdit } from 'react-icons/bi'
@@ -10,6 +10,7 @@ import './Cad_Jogos.css'
 import './Tab_Jogos.css'
 
 export default function Cad_Jogos() {
+
     const { handleSubmit, control } = useForm()
 
     const [plataformas, setPlataformas] = useState([])
@@ -61,6 +62,7 @@ export default function Cad_Jogos() {
         }
     }
 
+  
 
     return (
         <>
@@ -79,7 +81,7 @@ export default function Cad_Jogos() {
                             render={({ field, fieldState }) => (
                                 <>
                                     {/* <label>Nome</label> */}
-                                    <input {...field} className='Jg_Game' placeholder='Nome do jogo' id='Jg_Game' type='text' required />
+                                    <input {...field} className='Jg_Game'   placeholder='Nome do jogo' id='Jg_Game' type='text'  required />
                                     {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
                                 </>
                             )}
@@ -162,9 +164,9 @@ export default function Cad_Jogos() {
                         />
 
                         <div className='buttonsCadJg'>
-                            <button id='limpar' type='reset'>< AiOutlineClear /></button>
+                            <button title='Limpar' id='limpar' type='reset' >< AiOutlineClear /></button>
 
-                            <button id='salvar' type='submit'><HiSaveAs /></button>
+                            <button title='Salvar' id='salvar' type='submit'><HiSaveAs /></button>
 
                         </div>
 
@@ -194,8 +196,8 @@ export default function Cad_Jogos() {
                                 <td>{item.categoryName}</td>
                                 <td>{item.status}</td>
                                 <td>{item.rated}</td>
-                                <td><button id='edit'><BiEdit /></button></td>
-                                <td><button id='excluir' onClick={() => excluirGame(item.id)}><AiFillDelete /></button></td>
+                                <td><button title='Editar' id='edit'><BiEdit /></button></td>
+                                <td><button title='Excluir' id='excluir' onClick={() => excluirGame(item.id)}><AiFillDelete /></button></td>
                             </tr>
                         ))}
                     </tbody>

@@ -7,6 +7,7 @@ import MinhaArea from '../pages/MinhaArea';
 import PlataformaCrud from '../pages/PlataformaCrud';
 import Sobre from '../pages/Sobre';
 import { AuthGuard } from "./AuthGuard";
+import Politica from '../pages/Politica';
 
 
 // Esse arquivo serve para direcionar as rotas da aplicação, validando as rotas privadas e rotas públicas
@@ -26,6 +27,7 @@ export function Router() {
 
                 <Route path='/' element={<Home />} />
                 <Route path='/Sobre' element={<Sobre />} />
+                <Route path='/Politica' element={<Politica/>} />
             </Routes>
         </BrowserRouter>
     );

@@ -16,6 +16,10 @@
     text-decoration: none;
     
 }
+.UserA button{
+    background: none;
+    border: none;
+}
 
 
 .UserA a img{

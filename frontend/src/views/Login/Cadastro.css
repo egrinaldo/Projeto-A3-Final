@@ -8,13 +8,19 @@
     width: 450px;
     height: 600px;
     border-radius: 5px;
+    box-shadow: 0px 10px 20px #753295;
+    outline: 0px solid #753295;
+    border-radius: 10px;
 }
 
 .Login_Box img {
     display: flex;
     width: 40px;
     height: 40px;
-    margin-top: -90px;
+    margin-top: -98px;
+    box-shadow: 0px 10px 20px #753295;
+    outline: 1px solid #753295;
+    border-radius: 30px;
 
 }
 
@@ -44,6 +50,12 @@
 .Text_Log p {
     font-size: 1.1rem;
     color: #cccccc;
+}
+
+.Politica a {
+    color: azure;
+    font-size: 12px;
+    text-decoration: none;
 }
 
 .Inputs {

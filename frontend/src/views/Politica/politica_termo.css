@@ -1,0 +1,37 @@
+/*TEXTO TERMO DE USO DO SITE*/
+.term {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 200vh;
+    background: url(IMG/universe.jfif)no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+  }
+  
+  
+  .term-txt{
+    margin-top: -10%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: azure;
+    width: 80%;
+    height: 1100px;
+    border-radius: 30px;
+    background-color: transparent ;
+    padding: 30px 10px;
+    border: 2px solid #ffffff33;
+    background-color: #161616;
+    box-shadow: 0px 15px 60px #753295;
+    outline: 1px solid #753295;
+    border-radius: 10px;
+    
+  } 
+  
+  .term-txt p{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
