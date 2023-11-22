@@ -29,8 +29,8 @@ export function EditModal({ platform, onSave, onClose }) {
         <form onSubmit={handleSubmit(editarPlataforma)}>
             <div className="modal">
                 <div className="modal-content">
-                    <h2>Editar Platforma</h2>
-                    <label htmlFor="name">Nome:</label>
+                    <h2>Editar Plataforma</h2>
+                    {/* <label htmlFor="name">Nome:</label> */}
                     <Controller
                         name="name"
                         control={control}
@@ -44,8 +44,11 @@ export function EditModal({ platform, onSave, onClose }) {
                             </>
                         )}
                     />
-                    <button type='submit'>Salvar</button>
-                    <button onClick={onClose}>Fechar</button>
+                    <div id='butSaveLock'>
+                    <button className='btn' type='submit'>Salvar</button>
+                    <button className='btn' onClick={onClose}>Fechar</button>
+                    </div>
+
                 </div>
             </div>
         </form>
