@@ -34,7 +34,7 @@
     padding: 32px 24px 24px;
     gap: 16px;
     text-align: center;
-    
+
 }
 
 .Text_Log2 {
@@ -129,7 +129,7 @@
 .Return a{
     color: azure;
     font-size: 12px;
-    text-decoration: none;  
+    text-decoration: none;
 }
 
 @media (min-width: 360px) and (max-width: 450px){
@@ -150,7 +150,7 @@
         width: 40px;
         height: 40px;
         margin-top: -65px;
-    
+
     }
 }
 
@@ -172,6 +172,6 @@
         width: 60px;
         height: 60px;
         margin-top: -100px;
-    
+
     }
 }
