@@ -37,6 +37,19 @@
     margin-bottom: 8px;
   } */
 
+  #Jg_Estado2{
+    margin-left: 28%;
+    text-align: center;
+  }
+
+  #edit_game{
+    margin-left: -3%;
+  }
+
+  #Jg_Desenv{
+    text-align: center;
+  }
+
   .modal-content input{
     margin-left: 28%;
   }

@@ -54,7 +54,7 @@ export function EditModal({ game, onSave, onClose }){
         <form onSubmit={handleSubmit(editarJogo)}>
             <div className="modal">
                 <div className="modal-content">
-                    <h2>Editar Jogo</h2>
+                    <h2 id='edit_game'>Editar Jogo</h2>
                     <Controller
                         name="name"
                         control={control}
@@ -76,7 +76,7 @@ export function EditModal({ game, onSave, onClose }){
                             rules={{ required: 'Selecione a plataforma' }}
                             render={({ field, fieldState }) => (
                                 <>
-                                    <select {...field} className="Jg_Select" id="Jg_Estado" >
+                                    <select {...field} className="Jg_Select" id="Jg_Estado2" >
                                         <option value="">Plataforma</option>
                                         {plataformas.map((plataforma) => (
                                             <option key={plataforma.id} value={plataforma.id}>
@@ -96,7 +96,7 @@ export function EditModal({ game, onSave, onClose }){
                             rules={{ required: 'Selecione a categoria' }}
                             render={({ field, fieldState }) => (
                                 <>
-                                    <select {...field} className="Jg_Select" id="Jg_Estado" >
+                                    <select {...field} className="Jg_Select" id="Jg_Estado2" >
                                         <option value="">Categoria</option>
                                         {categorias.map((categorias) => (
                                             <option key={categorias.id} value={categorias.id}>
@@ -116,7 +116,7 @@ export function EditModal({ game, onSave, onClose }){
                             rules={{ required: 'Selecione o status' }}
                             render={({ field, fieldState }) => (
                                 <>
-                                    <select {...field} className="Jg_Select" id="Jg_Estado" >
+                                    <select {...field} className="Jg_Select" id="Jg_Estado2" >
                                         <option value="">Estado do jogo</option>
                                         <option value="ativo">Ativo</option>
                                         <option value="pausado">Pausado</option>
