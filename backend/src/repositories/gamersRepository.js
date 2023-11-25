@@ -45,7 +45,9 @@ async function getGamesByUserId(userId) {
   return await prisma.$queryRaw`SELECT
   g.id,
   g.userId AS userId,
+  p.id AS platformId,
   p.name AS platformName,
+  c.id AS categoryId,
   c.name AS categoryName,
   g.name,
   g.rated,
@@ -58,17 +60,17 @@ async function getGamesByUserId(userId) {
 
 // Atualiza um jogo pelo ID
 async function updateGame(gameId, gameData) {
-  const gameUpdated =  await prisma.$executeRaw`UPDATE Game SET
-  
-   ${gameData.platformId},
-   ${gameData.categoryId},
-   ${gameData.name},
-   ${gameData.rated},
-   ${gameData.status}
+  const gameUpdated =  await prisma.$executeRaw`UPDATE Game SET  
+   platformId = ${gameData.platformId},
+   categoryId = ${gameData.categoryId},
+   name = ${gameData.name},
+   rated=${gameData.rated},
+   status = ${gameData.status}
+   WHERE id = ${gameId}
    ;`
 
-  if (gameCreated){
-   return getGameByName(gameData.name)
+  if (gameUpdated){
+   return getGamesByUserId(gameData.userId)
   }
 }
 

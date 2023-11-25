@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { Controller, set, useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { AiFillDelete, AiOutlineClear } from 'react-icons/ai'
 import { BiEdit } from 'react-icons/bi'
@@ -8,6 +8,7 @@ import { HiSaveAs } from 'react-icons/hi'
 import { useAuth } from "../../app/hooks/useAuth"
 import './Cad_Jogos.css'
 import './Tab_Jogos.css'
+import { EditModal } from './EditModal'
 
 export default function Cad_Jogos() {
 
@@ -16,6 +17,8 @@ export default function Cad_Jogos() {
     const [plataformas, setPlataformas] = useState([])
     const [categorias, setCategorias] = useState([])
     const [games, setGames] = useState([])
+    const [editingGame, setEditingGame] = useState(null);
+    const [modalVisible, setModalVisible] = useState(false);
 
     const { userLogado } = useAuth();
 
@@ -62,7 +65,15 @@ export default function Cad_Jogos() {
         }
     }
 
-  
+    const openModal = (game) => {
+        setEditingGame(game);
+        setModalVisible(true);
+    };
+
+    const closeModal = () => {
+        setEditingGame(null);
+        setModalVisible(false);
+    };
 
     return (
         <>
@@ -196,13 +207,25 @@ export default function Cad_Jogos() {
                                 <td>{item.categoryName}</td>
                                 <td>{item.status}</td>
                                 <td>{item.rated}</td>
-                                <td><button title='Editar' id='edit'><BiEdit /></button></td>
+                                <td><button title='Editar' id='edit' onClick={() => openModal(item)}><BiEdit /></button></td>
                                 <td><button title='Excluir' id='excluir' onClick={() => excluirGame(item.id)}><AiFillDelete /></button></td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
+
+            {modalVisible && (
+                    <EditModal
+                    game={editingGame}
+                        onSave={() => {
+                            carregarDados();
+                            toast.success('Jogo editado com sucesso!');
+                        }}
+                        onClose={closeModal}
+                    />
+                )}
+
         </>
     )
 }

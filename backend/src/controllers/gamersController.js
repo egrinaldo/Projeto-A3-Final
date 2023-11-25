@@ -41,6 +41,7 @@ async function getGamesByUserId(req, res) {
 
 // Atualiza um jogo pelo ID
 async function updateGame(req, res) {
+
   const gameId = parseInt(req.params.id);
 
   try {
