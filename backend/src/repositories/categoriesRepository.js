@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 // Obtém todos as categorias
 async function getAllCategories() {
-    return await prisma.category.findMany();
+    return await prisma.$queryRaw`SELECT * FROM Category;`
 }
 
 async function getByName(name) {

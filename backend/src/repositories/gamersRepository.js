@@ -76,11 +76,7 @@ async function updateGame(gameId, gameData) {
 
 // Deleta um jogo pelo ID
 async function deleteGame(gameId) {
-  return await prisma.game.delete({
-    where: {
-      id: gameId,
-    },
-  });
+  return await prisma.$executeRaw`DELETE FROM Game WHERE id = ${gameId}`;
 }
 
 module.exports = {
@@ -89,4 +85,5 @@ module.exports = {
   getGamesByUserId,
   updateGame,
   deleteGame,
+  getGameByName
 };
