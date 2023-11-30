@@ -10,8 +10,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
+
+
   }
 
   .modal-content {
@@ -24,7 +24,11 @@
     box-shadow: 0px 15px 60px #753295;
     outline: 1px solid #753295;
     border-radius: 10px;
-    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
   }
 
   h2 {
@@ -39,11 +43,12 @@
 
   .modal-content input{
     margin-left: 28%;
+    margin-bottom: 6%;
   }
 
   #butSaveLock {
      margin-left: 30%;
-     
+
   }
 
   .Pla_Game{
@@ -78,7 +83,7 @@
     border-radius: 4px;
     cursor: pointer;
     margin: 4px;
-    
+
   }
   #butSalvarFechar {
     border: none;
@@ -93,11 +98,11 @@
     box-shadow: 0px 0px 15px #1f4c65;
     -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
   }
-  
+
   #butSalvarFechar:active {
     scale: 0.92;
   }
-  
+
   #butSalvarFechar:hover {
     background: rgb(2,29,78);
     background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, #a749d2 60%);
@@ -105,4 +110,20 @@
   }
   #butSalvarFechar:hover {
     background-color: #0056b3;
+  }
+
+  @media (min-width: 320px) and (max-width: 500px){
+
+    .modal-content{
+        width: 320px;
+    }
+
+    .modal-content input{
+        margin-left: 25%;
+    }
+
+    #butSaveLock{
+        margin-left: 26.5%;
+    }
+
   }

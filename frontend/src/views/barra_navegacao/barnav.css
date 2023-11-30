@@ -61,7 +61,7 @@ padding: 0;
 }
 
 
-@media (min-width: 360px) and (max-width: 450px) {
+@media (min-width: 320px) and (max-width: 450px) {
 /* BASE DA BARRA DE NAVEGAÇÃO HEADER   */
 .navbar{
     display: flex;

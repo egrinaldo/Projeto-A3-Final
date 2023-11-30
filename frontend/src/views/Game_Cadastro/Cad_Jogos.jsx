@@ -228,4 +228,13 @@ export default function Cad_Jogos() {
 
         </>
     )
+
+    handleSubmit = (cadastrarJogo) => (event) => {
+        event.preventDefault();
+
+        cadastrarJogo();
+
+        // Reset the form to clear the input field
+        event.target.reset();
+      };
 }

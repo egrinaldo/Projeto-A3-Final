@@ -70,7 +70,7 @@ export default function Plataforma_Cad() {
         <>
             <div className="cad_Form">
                 <div className="card_cadNome">
-                    <p>Cadastro da Plataforma</p>
+                    <p div='cad_plat'>Cadastro da Plataforma</p>
 
                 </div>
                 <div>

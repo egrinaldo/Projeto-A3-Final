@@ -5,11 +5,11 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 95vh;
-  
-  
+    min-height: 65vh;
+
+
   }
-  
+
   .sec-corpo{
     display: flex;
     justify-content: center;
@@ -20,9 +20,9 @@
     width: 96%;
     height: 470px;
   }
-  
-  
-  
+
+
+
   .acao-txt{
     font-family: 'Roboto', sans-serif;
 
@@ -32,18 +32,18 @@
     margin: 0px;
     margin-left: 1%;
     margin-top: -7%;
-  
+
   }
-  
+
   .acao-txt h1{
     font-size: 45px;
   }
-  
+
   .acao-txt p{
     text-align: justify;
   }
-  
-  
+
+
   .acao-img{
     display: flex;
     justify-content: center;
@@ -51,12 +51,12 @@
     margin-left: 20px;
     width: 35%;
     height: 470px;
-  
+
     /*DEIXAR A FOTO COM EFEITO TRANSPARENTE*/
-  
+
     mask-image: linear-gradient(to right, transparent 25%, black 20%);
   }
-  
+
   .acao-img img{
     border-radius: 20px;
   }
@@ -69,7 +69,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 25vh;
+  min-height: 65vh;
 
 }
 
@@ -77,7 +77,7 @@
   display: flex;
   justify-content: center;
   background-size:cover;
-  margin-left: 280px;
+  margin-left: 20px;
   width: 35%;
   height: 470px;
 
@@ -97,7 +97,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 95vh;
+  min-height: 65vh;
 
 }
 
@@ -108,7 +108,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 25vh;
+  min-height: 65vh;
 
 }
 
@@ -117,22 +117,14 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
+  min-height: 65vh;
 
 }
 
-/* RESPONSIVIDADE */
 
 /* RESONSIVIDADE PARA DISPOSITIVOS MOVEIS body - largura 360px X 450px */
 
-
-
-/* RESONSIVIDADE PARA DISPOSITIVOS MOVEIS body - largura 760px X 820px */
-
-
-/* RESONSIVIDADE PARA DISPOSITIVOS MOVEIS body - largura 360px X 450px */
-
-@media (min-width: 360px) and (max-width: 450px){
+@media (min-width: 320px) and (max-width: 450px){
 /*BASE GRADE DE JOGOS DE AÇÃO*/
 .body-acao{
   background: #111111;
@@ -161,8 +153,6 @@
   height: 320px;
 }
 
-
-
 .acao-txt{
   font-family: 'Roboto', sans-serif;
   margin-left: 50px;
@@ -172,7 +162,6 @@
   margin: 30px;
   margin-top: -3%;
   margin-left: 2px;
-
 }
 
 .acao-txt h1{
@@ -180,19 +169,19 @@
 }
 .acao-txt h3{
   font-size: 11px;
+  margin-left: 0;
 }
 .acao-txt p{
   font-size: 7.5px;
   text-align: justify;
 }
 
-
 .acao-img{
   display: flex;
   justify-content: center;
   background-size:cover;
   margin-left: 70px;
-  width: 10%;
+  width: 10px;
   height: 320px;
 
   /*DEIXAR A FOTO COM EFEITO TRANSPARENTE*/
@@ -202,6 +191,10 @@
 
 .acao-img img{
   border-radius: 20px;
+}
+
+#pRd{
+    padding-right: 25px;
 }
 
 /* RANKIG 4*/
@@ -283,12 +276,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 95.5%;
-  height: 30%;
-  /* min-height: 95vh; */
-  margin-top: -30%;
-
-
+  width: 95%;
+  min-height: 90vh;
 }
 
 .sec-corpo{
@@ -320,7 +309,7 @@
 }
 
 .acao-txt p{
-  font-size: 14px;
+  font-size: 12.5px;
   text-align: justify;
 }
 
@@ -349,11 +338,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 94%;
-  min-height: 25vh;
-  margin-top: -30%;
-  
-
+  width: 95%;
+  min-height: 90vh;
 }
 
 
@@ -365,7 +351,7 @@
   width: 35%;
   height: 470px;
 
-  
+
 
   /*DEIXAR A FOTO COM EFEITO TRANSPARENTE*/
 
@@ -382,10 +368,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 97%;
-  min-height: 95vh;
-  margin-top: -30%;
-
+  width: 95%;
+  min-height: 90vh;
 }
 
 /*RANKIG 2*/
@@ -394,20 +378,144 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 95.5%;
-  min-height: 25vh;
-  margin-top: -30%;
-
+  width: 95%;
+  min-height: 90vh;
 }
 
-.corpo-acao5{
+.corpo-acao5 {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 95%;
-  min-height: 100vh;
-  margin-top: -30%;
-
-
+  min-height: 90vh;
 }
 }
+
+/*   Responsividade para telas maiores do que 1024   */
+
+@media (min-width: 1100px){
+    /*BASE GRADE DE JOGOS DE AÇÃO*/
+  .body-acao{
+    background: #111111;
+  }
+
+  /*primeira grade*/
+
+  .corpo-acao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    min-height: 65vh;
+  }
+
+  .sec-corpo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #171717;
+    margin: 0;
+    border-radius: 20px;
+    width: 96%;
+    height: 470px;
+  }
+
+
+
+  .acao-txt{
+    font-family: 'Roboto', sans-serif;
+    margin-left: 50px;
+    width: 120%;
+    height: 90%;
+    color: azure;
+    margin: 30px;
+    margin-top: -6%;
+
+  }
+
+  .acao-txt h1{
+    font-size: 35px;
+  }
+
+  .acao-txt p{
+    font-size: 12.5px;
+    text-align: justify;
+  }
+
+
+  .acao-img{
+    display: flex;
+    justify-content: center;
+    background-size:cover;
+    margin-left: 20px;
+    width: 35%;
+    height: 470px;
+
+    /*DEIXAR A FOTO COM EFEITO TRANSPARENTE*/
+
+    mask-image: linear-gradient(to right, transparent 25%, black 20%);
+  }
+
+  .acao-img img{
+    border-radius: 20px;
+  }
+
+  /* RANKIG 4*/
+
+
+  .corpo-acao2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    min-height: 65vh;
+  }
+
+
+  .acao-img2{
+    display: flex;
+    justify-content: center;
+    background-size:cover;
+    margin-left: 10%;
+    width: 35%;
+    height: 470px;
+
+
+
+    /*DEIXAR A FOTO COM EFEITO TRANSPARENTE*/
+
+    mask-image: linear-gradient(to right, transparent 25%, black 20%);
+  }
+
+  .img2{
+    border-radius: 20px;
+  }
+
+  /*RANKIG 3*/
+
+  .corpo-acao3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    min-height: 65vh;
+  }
+
+  /*RANKIG 2*/
+
+  .corpo-acao4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    min-height: 65vh;
+  }
+
+  .corpo-acao5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    min-height: 65vh;
+  }
+  }

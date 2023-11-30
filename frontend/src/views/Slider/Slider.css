@@ -72,7 +72,7 @@
 
 /* RESONSIVIDADE PARA DISPOSITIVOS MOVEIS body - largura 360px X 450px */
 
-@media (min-width: 360px) and (max-width: 450px){
+@media (min-width: 320px) and (max-width: 450px){
   /*TELA DESCUBRA CAROUSEL*/
 
   .carousel {
@@ -88,7 +88,7 @@
     margin: 0;
     margin-left: 2%;
   }
-  
+
   .color {
     height: 100%;
     flex: 1;
@@ -101,47 +101,47 @@
     transition: all 0.5s ease-out;
     cursor: pointer;
   }
-  
+
   .color span {
     opacity: 0;
     transition: opacity 0.1s linear;
   }
-  
+
   .color:nth-child(1) {
     background-image:url(src/assets/img_slide/starfield.jpg);
     background-position: center;
     background-size: cover;
   }
-  
+
   .color:nth-child(2) {
     background-image:url(src/assets/img_slide/spiderman.jpg);
     background-position: left 70%;
     background-size: cover;
   }
-  
+
   .color:nth-child(3) {
     background-image:url(src/assets/img_slide/mw2.jpg);
     background-position: top 30%;
     background-size: cover;
   }
-  
+
   .color:nth-child(4) {
     background-image:url(src/assets/img_slide/fifa22.jpg);
     background-position: top 15%;
     background-size: cover;
   }
-  
+
   .color:nth-child(5) {
     background-image:url(src/assets/img_slide/Forza-Horizon-6.jpg);
     background-position: center;
     background-size: cover;
   }
-  
+
   .color:hover {
     flex: 2;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
-  
+
   .color:hover span {
     opacity: 1;
   }
@@ -165,6 +165,7 @@
   overflow: hidden;
   margin: 0;
   margin-left: 1.5%;
+  margin-bottom: 50px;
 }
 
 .color {

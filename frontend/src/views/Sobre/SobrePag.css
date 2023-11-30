@@ -7,9 +7,9 @@
     width: 100%;
     height: 300px;
   }
-  
+
   /*CONFIGURAÇÒES DO TEXTO ABA SOBRE*/
-  
+
   .acredito{
     display: flex;
     justify-content: space-evenly;
@@ -17,20 +17,44 @@
     width: 100%;
     height: 400px;
   }
-  
+
   .corpo h1{
     font-family: 'Roboto', sans-serif;
     color: azure;
     text-align: center;
     font-size: 55px;
   }
-  
-  .corpo p{
+
+  .texto0 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: azure;
+    font-size: 20px;
+    width: 70%;
+    margin-left: 13%;
+  }
+
+  .texto1{
     font-family: 'Roboto', sans-serif;
     text-align: center;
     color: azure;
     font-size: 20px;
   }
+
+  .texto2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: azure;
+    font-size: 20px;
+  }
+
+  .texto3 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: azure;
+    font-size: 20px;
+  }
+
   .corpo h2{
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -38,14 +62,36 @@
     font-size: 30px;
     padding: 100px;
   }
-  
+
+  .h3inclu{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: azure;
+    font-size: 30px;
+  }
+
+  .h3acess{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: azure;
+    font-size: 30px;
+  }
+
+  .h3seg{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: azure;
+    font-size: 30px;
+  }
+
+
   .acredimg {
     display: flex;
     justify-content: center;
     width: 35%;
     height: 700px;
   }
-  
+
   .acredtxt {
     font-family: 'Roboto', sans-serif;
     display: flex;
@@ -66,7 +112,8 @@
     padding: 25px;
   }
   .acredito p{
-    text-align: center;
+    text-align: justify;
+    padding-bottom: 20px;
   }
 
   /*BOTÃO PARA CHAMADA DA TELA CADASTRO*/
@@ -285,14 +332,14 @@ button:active {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 400px;
+  height: 200px;
 }
 .acredimg3 {
   display: flex;
   justify-content: center;
   margin-top: 600px;
   width: 35%;
-  height: 500px;
+  height: 400px;
 }
 
 .acredtxt3 {
@@ -309,11 +356,191 @@ button:active {
   padding: 25px;
 }
 .acredito3 p{
-  text-align: center;
+  text-align: justify;
+  padding-left: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 450px){
+
+      .h3inclu{
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        color: azure;
+        font-size: 1.2rem;
+      }
+
+      .h3acess{
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        color: azure;
+        font-size: 1.2rem;
+      }
+
+      .h3seg{
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        color: azure;
+        font-size: 1.2rem;
+      }
+
+    /* Imagem título  */
+
+    #imgC {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Texto do bem vindo  */
+
+    .corpo h1{
+        font-size: 1.5rem;
+    }
+
+    .texto0{
+        font-size: 1rem;
+        width: 80%;
+        margin-left: 10% ;
+    }
+
+    /* Parte Inclusivo */
+
+    .corpo h2{
+        font-size: 1.2rem;
+        margin-top: 0px;
+        padding: 40px;
+    }
+
+    .acredimg{
+        width: 142px;
+        height: 200px;
+        margin-left: 20px;
+        padding-right: 0px;
+    }
+
+    .acredtxt{
+        width: 50%;
+        height: 50%;
+        margin-bottom: 100px;
+        padding-left: 50px;
+    }
+
+    .acredito{
+        height: 200px;
+    }
+
+    .acredito p {
+        text-align: justify;
+    }
+
+    .texto1{
+        font-family: 'Roboto', sans-serif;
+        color: azure;
+        font-size: 0.73rem;
+        margin-top: -10px;
+        margin-left: -25px;
+        padding-right: 20px;
+      }
+
+    .bn{
+        font-size: 15px;
+        margin-left: -230px;
+        margin-top: 40px;
+    }
+
+    h3{
+        margin-left: -35px;
+    }
+
+    /* Parte Inclusivo */
+
+    .acredtxt2{
+        margin-top: 10px;
+    }
+
+    .acredimg2{
+        width: 142px;
+        height: 200px;
+        margin-left: 0px;
+        padding-left: 80px;
+    }
+
+    .texto2{
+        font-family: 'Roboto', sans-serif;
+        color: azure;
+        font-size: 0.73rem;
+        margin-top: -10px;
+        margin-left: -25px;
+    }
+
+    .acess{
+        margin-top: 15px;
+    }
+
+    .acredito2{
+        height: 200px;
+        margin-top: 180px;
+    }
+
+    /* Parte Inclusivo */
+
+    .acredtxt3{
+        margin-top: 10px;
+    }
+
+    .acredimg3{
+        width: 142px;
+        height: 200px;
+        margin-left: 0px;
+        padding-right: 60px;
+        margin-top: 0px;
+
+    }
+
+    .texto3{
+        font-family: 'Roboto', sans-serif;
+        color: azure;
+        font-size: 0.73rem;
+        margin-top: -10px;
+        margin-left: -25px;
+        padding-left: 40px;
+    }
+
+    .acess{
+        margin-top: 15px;
+    }
+
+    .acredito3{
+        height: 200px;
+        margin-top: 120px;
+    }
+
+    .acredito3 p{
+        text-align: justify;
+    }
+
+    .h3seg{
+        padding-left: 10px;
+        margin-left: 10px;
+    }
 }
 
 
+@media (min-width: 760px) and (max-width: 820px){
 
+    .acredimg2{
+        padding-left: 100px;
+    }
 
-  
+    .h3seg{
+        padding-left: 20%;
+        margin-bottom: 5px;
+    }
+
+    .texto3{
+        padding-left: 100px;
+        margin-left: 20px;
+
+    }
+
+}
 

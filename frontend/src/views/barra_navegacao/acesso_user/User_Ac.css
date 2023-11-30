@@ -12,9 +12,9 @@
     justify-content: center;
     width: 30px;
     height: 40px;
-    margin-left: 82%;
+    margin-left: 78%;
     text-decoration: none;
-    
+
 }
 .UserA button{
     background: none;
@@ -71,7 +71,7 @@
         justify-content: center;
         width: 30px;
         height: 40px;
-        margin: 42%;
+        margin: 41%;
     }
 }
 
@@ -85,3 +85,15 @@
         margin: 74%;
     }
 }
+
+@media (min-width: 1440px){
+    .UserA{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 40px;
+        margin: 83%;
+    }
+}
+

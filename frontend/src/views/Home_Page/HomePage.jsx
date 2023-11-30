@@ -8,7 +8,7 @@ export default function HomePage() {
                     <div className='acao-txt'>
                         <h1>Red Dead Redemption 2</h1>
                         <h3>Vivencie a épica aventura no Oeste que marcou uma geração.</h3>
-                        <p>Faça uma jornada pelos vastos campos do Oeste dos Estados Unidos e do México em Red Dead Redemption e na expansão de terror de zumbis Undead Nightmare  agora disponíveis para jogar em consoles modernos.
+                        <p id='pRd'>Faça uma jornada pelos vastos campos do Oeste dos Estados Unidos e do México em Red Dead Redemption e na expansão de terror de zumbis Undead Nightmare  agora disponíveis para jogar em consoles modernos.
                             Estados Unidos, 1899. O fim da era do velho oeste começou. Depois de tudo dar errado durante um roubo em uma cidade do oeste chamada Blackwater, Arthur Morgan  e a gangue Van der Linde são forçados a fugir. </p>
                     </div>
                     <div className='acao-img'>

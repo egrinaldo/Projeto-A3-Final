@@ -133,4 +133,12 @@
 }
 
 
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE TELAS MENORES QUE 500PX*/
+
+@media (max-width: 500px){
+
+    .card_cadNome p{
+        font-size: 11px;
+    }
+
+}
