@@ -12,10 +12,15 @@ export default function Cad_User() {
     const onSubmit = async (data) => {
 
         // faz a comunicação com o axios
-        const response = await axios.post('http://localhost:3000/users', data)
+        try {
+            const response = await axios.post('http://localhost:3000/users', data)
+            toast.success('Cadastro realizado com sucesso!');
+        }
+        catch (error) {
+            toast.error('Erro ao cadastrar usuário! Error: ' + error.message);
+        }
 
 
-        toast.success('Cadastro realizado com sucesso!');
 
     };
 
