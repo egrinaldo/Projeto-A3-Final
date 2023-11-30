@@ -10,14 +10,13 @@ export default function Cad_User() {
     const { handleSubmit, control } = useForm();
 
     const onSubmit = async (data) => {
-        console.log(data); // Os dados do formulário serão impressos aqui
 
         // faz a comunicação com o axios
         const response = await axios.post('http://localhost:3000/users', data)
 
 
         toast.success('Cadastro realizado com sucesso!');
-        console.log(response.data);
+
     };
 
     return (

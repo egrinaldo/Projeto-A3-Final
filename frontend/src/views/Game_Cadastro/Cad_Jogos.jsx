@@ -12,7 +12,7 @@ import { EditModal } from './EditModal'
 
 export default function Cad_Jogos() {
 
-    const { handleSubmit, control } = useForm()
+    const { handleSubmit, control, reset } = useForm()
 
     const [plataformas, setPlataformas] = useState([])
     const [categorias, setCategorias] = useState([])
@@ -44,7 +44,7 @@ export default function Cad_Jogos() {
             setCategorias(categorias.data)
 
             const games = await axios.get(`http://localhost:3000/games/${userId}`)
-            console.log(games.data)
+
             setGames(games.data)
         } catch (error) {
             toast.error('Falha ao carregar os dados')
@@ -75,6 +75,11 @@ export default function Cad_Jogos() {
         setModalVisible(false);
     };
 
+    const handleClearFields = () => {
+        reset(); // Esta função limpa todos os campos controlados pelo react-hook-form
+    };
+
+
     return (
         <>
             <div className="cad_Form">
@@ -92,7 +97,7 @@ export default function Cad_Jogos() {
                             render={({ field, fieldState }) => (
                                 <>
                                     {/* <label>Nome</label> */}
-                                    <input {...field} className='Jg_Game'   placeholder='Nome do jogo' id='Jg_Game' type='text'  required />
+                                    <input {...field} className='Jg_Game' placeholder='Nome do jogo' id='Jg_Game' type='text' required />
                                     {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
                                 </>
                             )}
@@ -175,7 +180,7 @@ export default function Cad_Jogos() {
                         />
 
                         <div className='buttonsCadJg'>
-                            <button title='Limpar' id='limpar' type='reset' >< AiOutlineClear /></button>
+                            <button title='Limpar' id='limpar' onClick={handleClearFields} >< AiOutlineClear /></button>
 
                             <button title='Salvar' id='salvar' type='submit'><HiSaveAs /></button>
 
@@ -216,25 +221,16 @@ export default function Cad_Jogos() {
             </div>
 
             {modalVisible && (
-                    <EditModal
+                <EditModal
                     game={editingGame}
-                        onSave={() => {
-                            carregarDados();
-                            toast.success('Jogo editado com sucesso!');
-                        }}
-                        onClose={closeModal}
-                    />
-                )}
+                    onSave={() => {
+                        carregarDados();
+                        toast.success('Jogo editado com sucesso!');
+                    }}
+                    onClose={closeModal}
+                />
+            )}
 
         </>
     )
-
-    handleSubmit = (cadastrarJogo) => (event) => {
-        event.preventDefault();
-
-        cadastrarJogo();
-
-        // Reset the form to clear the input field
-        event.target.reset();
-      };
 }

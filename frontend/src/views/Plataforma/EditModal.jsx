@@ -15,7 +15,7 @@ export function EditModal({ platform, onSave, onClose }) {
 
     const editarPlataforma = async (data) => {
         try {
-            console.log('bateu')
+
             const obj = { ...data, id: platform.id }
             const platforms = await axios.put('http://localhost:3000/platforms', obj)
             handleSave(platforms.data);
@@ -45,8 +45,8 @@ export function EditModal({ platform, onSave, onClose }) {
                         )}
                     />
                     <div id='butSaveLock'>
-                    <button id='butSalvarFechar' type='submit'>Salvar</button>
-                    <button id='butSalvarFechar' onClick={onClose}>Fechar</button>
+                        <button id='butSalvarFechar' type='submit'>Salvar</button>
+                        <button id='butSalvarFechar' onClick={onClose}>Fechar</button>
                     </div>
 
                 </div>

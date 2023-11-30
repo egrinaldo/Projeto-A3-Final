@@ -12,7 +12,7 @@ import "./Plataforma_Tab.css";
 
 export default function Plataforma_Cad() {
 
-    const { handleSubmit, control } = useForm();
+    const { handleSubmit, control, reset } = useForm();
     const [plataformas, setPlataformas] = useState([]);
     const userLogado = JSON.parse(localStorage.getItem('user'));
     const userId = userLogado.user[0].id;
@@ -66,6 +66,11 @@ export default function Plataforma_Cad() {
         setModalVisible(false);
     };
 
+    const handleClearFields = () => {
+        reset(); // Esta função limpa todos os campos controlados pelo react-hook-form
+    };
+
+
     return (
         <>
             <div className="cad_Form">
@@ -89,7 +94,7 @@ export default function Plataforma_Cad() {
                             )}
                         />
                         <div className='buttonsCadJg'>
-                            <button id='limpar' title='Limpar' type='reset'>< AiOutlineClear /></button>
+                            <button id='limpar' title='Limpar' onClick={handleClearFields}>< AiOutlineClear /></button>
                             <button id='salvar' title='Salvar' type='submit'><HiSaveAs /></button>
                         </div>
 
