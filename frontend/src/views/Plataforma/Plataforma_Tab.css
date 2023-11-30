@@ -11,7 +11,10 @@
     border-style: groove;
     background: #121212;
     width: 100vw;
-    height: 100rh;
+    border-radius: 10px;
+    max-width: 100%; /* Defina o tamanho máximo desejado */
+    overflow-x: auto;
+
     
     
 /* CARD DO NOME 'MEUS FAVORITOS' */
@@ -19,7 +22,7 @@
 
 table{
     width: 100%;
-    padding: 0.5%;
+  padding: 0.5%;
 }
 
 .Form_Name th{
@@ -31,24 +34,30 @@ table{
 }
 
 #img_game{
-    width: 10%;
+    width: 8%;
+}
+
+img{
+    border-radius: 10px;
 }
 
 
 
-.Form_Dados img{
-    margin-top: 2%;
+.Form_Dados img {
     width: 50%;
-    height: 30%;
+    /* Remova a altura para evitar espaçamento extra */
+    /* height: 50%; */
+    border-radius: 10px;
 }
 
 .Form_Dados td{
     text-align: center;
-    border: groove;
+    /* Remova a margem e o espaçamento interno (padding) */
+    margin: 0;
+    padding: 0;
     border-color: #404040;
     color: #cacaca;
     font-size: 100%;
-    padding: 0;
 }
 
 

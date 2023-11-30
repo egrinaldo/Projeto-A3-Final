@@ -51,7 +51,8 @@ async function getGamesByUserId(userId) {
   c.name AS categoryName,
   g.name,
   g.rated,
-  g.status
+  g.status,
+  g.imageUrl
   FROM Game g
   JOIN Platform p ON g.platformId = p.id
   JOIN Category c ON g.categoryId = c.id
@@ -60,7 +61,7 @@ async function getGamesByUserId(userId) {
 
 // Atualiza um jogo pelo ID
 async function updateGame(gameId, gameData) {
-  const gameUpdated =  await prisma.$executeRaw`UPDATE Game SET  
+  const gameUpdated = await prisma.$executeRaw`UPDATE Game SET  
    platformId = ${gameData.platformId},
    categoryId = ${gameData.categoryId},
    name = ${gameData.name},
@@ -69,8 +70,8 @@ async function updateGame(gameId, gameData) {
    WHERE id = ${gameId}
    ;`
 
-  if (gameUpdated){
-   return getGamesByUserId(gameData.userId)
+  if (gameUpdated) {
+    return getGamesByUserId(gameData.userId)
   }
 }
 

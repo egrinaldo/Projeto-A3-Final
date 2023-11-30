@@ -194,6 +194,7 @@ export default function Cad_Jogos() {
                     <thead>
                         <tr className='Form_Name'>
                             <th>Id</th>
+                            <th>Imagem</th>
                             <th>Nome</th>
                             <th>Plataforma</th>
                             <th>Categoria</th>
@@ -207,6 +208,7 @@ export default function Cad_Jogos() {
                         {games.map((item, index) => (
                             <tr key={index} className='Form_Dados'>
                                 <td>{item.id}</td>
+                                <td id='img_game'><img src={item.imageUrl} alt="" /></td>
                                 <td>{item.name}</td>
                                 <td>{item.platformName}</td>
                                 <td>{item.categoryName}</td>
