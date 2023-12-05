@@ -89,6 +89,7 @@ export default function Cad_Jogos() {
                 </div>
                 <div>
                     <form className="Form_Jg" onSubmit={handleSubmit(cadastrarJogo)}>
+
                         <Controller
                             name="name"
                             control={control}
@@ -98,6 +99,19 @@ export default function Cad_Jogos() {
                                 <>
                                     {/* <label>Nome</label> */}
                                     <input {...field} className='Jg_Game' placeholder='Nome do jogo' id='Jg_Game' type='text' required />
+                                    {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
+                                </>
+                            )}
+                        />
+
+                        <Controller
+                            name="imageUrl"
+                            control={control}
+                            defaultValue=""
+                            render={({ field, fieldState }) => (
+                                <>
+                                    {/* <label>Nome</label> */}
+                                    <input {...field} className='Jg_Game' placeholder='Url Imagem' id='Jg_Game' type='text' />
                                     {fieldState.error && <p id='error-message'>{fieldState.error.message}</p>}
                                 </>
                             )}
